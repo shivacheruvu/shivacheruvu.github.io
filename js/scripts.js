@@ -1,12 +1,12 @@
 /**
  * AI Frontier Portfolio Scripts
  * Shiva Preetham Chinthalacheruvu
- * Implements Theme Switching, Personal Intelligence Terminal, Filter Tabs, Code Copier
+ * Theme: Claude Code Prioritized • Antigravity • Codex
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
-  initPersonalIntelligence();
+  initAgenticIntelligence();
   initProjectFiltering();
   initCodeCopier();
   initMockRunner();
@@ -17,22 +17,27 @@ document.addEventListener('DOMContentLoaded', () => {
  * ------------------------------------------------------------- */
 function initThemeToggle() {
   const toggleBtn = document.getElementById('themeToggleBtn');
-  if (!toggleBtn) return;
+  const toggleBtnMobile = document.getElementById('themeToggleBtnMobile');
 
   const currentTheme = localStorage.getItem('theme') || 
     (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
   document.documentElement.setAttribute('data-theme', currentTheme);
-  updateThemeIcon(toggleBtn, currentTheme);
+  if (toggleBtn) updateThemeIcon(toggleBtn, currentTheme);
+  if (toggleBtnMobile) updateThemeIcon(toggleBtnMobile, currentTheme);
 
-  toggleBtn.addEventListener('click', () => {
+  const handleToggle = () => {
     const activeTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = activeTheme === 'dark' ? 'light' : 'dark';
     
     document.documentElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
-    updateThemeIcon(toggleBtn, newTheme);
-  });
+    if (toggleBtn) updateThemeIcon(toggleBtn, newTheme);
+    if (toggleBtnMobile) updateThemeIcon(toggleBtnMobile, newTheme);
+  };
+
+  if (toggleBtn) toggleBtn.addEventListener('click', handleToggle);
+  if (toggleBtnMobile) toggleBtnMobile.addEventListener('click', handleToggle);
 }
 
 function updateThemeIcon(btn, theme) {
@@ -46,9 +51,19 @@ function updateThemeIcon(btn, theme) {
 }
 
 /* -------------------------------------------------------------
- * 2. Personal Intelligence Module (Gemini / Antigravity Agent)
+ * 2. Agentic Intelligence Module (Claude Code • Antigravity • Codex)
  * ------------------------------------------------------------- */
 const INTEL_KNOWLEDGE_BASE = {
+  "claude-code": {
+    topic: "Autonomous Data Pipelines with Claude Code",
+    badge: "Primary Agent Driver: Claude Code",
+    response: `<strong>Claude Code CLI</strong> serves as Shiva's primary agentic pairing partner for infrastructure automation and software engineering:<br>
+    <ul>
+      <li><strong>Autonomous Pipeline Generation:</strong> Utilizing Claude Code to rapidly scaffold PySpark medallion transformation models, automate YAML workflow configs, and orchestrate schema diffing scripts.</li>
+      <li><strong>Test Synthesis & Static Verification:</strong> Claude Code automates edge-case unit test generation for data reconciliation, validating row-level assertions before execution on clusters.</li>
+      <li><strong>Zero-Leak Defense:</strong> Claude Code is configured with strict credential avoidance rules—automatically stripping tokens, utilizing <code>.env.example</code> templates, and validating against local <code>gitleaks</code> pre-commit hooks.</li>
+    </ul>`
+  },
   "frontier": {
     topic: "Enterprise Delta Lake & PySpark (Frontier/Verizon)",
     badge: "Databricks & Delta Lake",
@@ -62,51 +77,39 @@ const INTEL_KNOWLEDGE_BASE = {
   },
   "yuka": {
     topic: "SmartGrocery AI (End-to-End Yuka Alternative)",
-    badge: "AI E2E Vision & Cost-Optimization",
-    response: `<strong>SmartGrocery AI</strong> is Shiva's self-directed end-to-end AI application replacing subscription-based food scanning apps like Yuka:<br>
+    badge: "Claude Code & Vision App",
+    response: `<strong>SmartGrocery AI</strong> is Shiva's self-directed daily grocery application replacing subscription food scanners like Yuka:<br>
     <ul>
-      <li><strong>Daily Utility:</strong> Designed for everyday grocery shopping to save money and safeguard health without paying recurring subscription fees.</li>
-      <li><strong>Vision Pipeline:</strong> Mobile barcode & ingredient OCR parsed via Gemini Multimodal Vision to flag ultra-processed additives, endocrine disruptors, and carcinogens.</li>
-      <li><strong>Price Arbitrage:</strong> Aggregates live supermarket price feeds to surface cheaper, healthier pantry alternatives.</li>
-      <li><strong>Zero-Leak BYOK:</strong> Built on a client-side Bring-Your-Own-Key model—anyone can clone and run it on free-tier Gemini API with zero cloud credit leakage or exposed secrets.</li>
+      <li><strong>Daily Grocery Utility:</strong> Shiva grocery shops daily and engineered this app to eliminate recurring subscription fees while saving money on family grocery budgets.</li>
+      <li><strong>Vision & Agent Pipeline:</strong> Mobile barcode & nutrition OCR analyzed via Gemini Multimodal Vision, with the backend microservices built and tested using <strong>Claude Code</strong>.</li>
+      <li><strong>Price Arbitrage:</strong> Automatically suggests healthier, cheaper pantry alternatives across local store price indices.</li>
+      <li><strong>Zero-Leak BYOK Architecture:</strong> Pure Bring-Your-Own-Key model—any visitor can clone and run it with their own free API key without touching Shiva's cloud credits or billing accounts.</li>
     </ul>`
   },
   "cloud": {
-    topic: "Cloud Infrastructure & Cost Guardrails (GCP & Databricks)",
-    badge: "Cost-Capped Cloud Architecture",
-    response: `Shiva's cloud infrastructure methodology focuses on high throughput with strict budget guardrails:<br>
+    topic: "Cost-Capped Cloud Infrastructure (Databricks 14-Day Trial & GCP)",
+    badge: "Infra Cost Guardrails",
+    response: `Shiva's cloud infrastructure shortcuts demonstrate deep expertise in compute cost optimization:<br>
     <ul>
-      <li><strong>Databricks 14-Day Trial Daemon:</strong> Automated cluster orchestrator that enforces 15-minute inactivity termination, single-node autoscaling, and zero idle spend.</li>
-      <li><strong>GCP Credit-Protected Lakehouse:</strong> GCS lifecycle rule scripts, BigQuery byte-billing limits, and Workload Identity Federation (keyless GitHub Actions &rarr; GCP deployment).</li>
+      <li><strong>Databricks 14-Day Trial Daemon:</strong> Automated cluster orchestrator enforcing 15-minute inactivity termination, single-node autoscaling, and zero idle spend so trial credits never burn out.</li>
+      <li><strong>GCP Credit Protection:</strong> GCS Coldline lifecycle rules, BigQuery query byte billing limits, and Workload Identity Federation (keyless GitHub Actions &rarr; GCP deployment).</li>
       <li><strong>Multi-Cloud Scope:</strong> Hands-on across AWS (S3, EC2), GCP (GCS, BigQuery), and Azure, backed by AWS Cloud Practitioner and Okta certifications.</li>
     </ul>`
   },
   "security": {
     topic: "Security-First Development & Secret Protection",
     badge: "Gitleaks & Identity Security",
-    response: `All projects in this repository and Shiva's portfolio adhere to ironclad security standards:<br>
+    response: `All projects in this repository and Shiva's portfolio adhere to strict security guardrails:<br>
     <ul>
-      <li><strong>Zero Hardcoded Credentials:</strong> Every repo uses <code>.env.example</code> with placeholder configurations. Live keys never leave local environment variables or Secret Manager.</li>
+      <li><strong>Zero Hardcoded Credentials:</strong> Every repo uses <code>.env.example</code> with placeholder configurations. Live keys never leave local environment variables.</li>
       <li><strong>Automated Scanning:</strong> Continuous CI/CD scanning via <code>gitleaks-action</code> across full commit histories plus pre-commit hooks.</li>
       <li><strong>Access Control:</strong> Certified Okta Professional expertise applied to SSO, IAM principles, and least-privilege cloud roles.</li>
-      <li><strong>Consumer Isolation:</strong> Outside viewers can inspect and run Shiva's code using their own accounts without touching Shiva's cloud credits or billing resources.</li>
-    </ul>`
-  },
-  "education": {
-    topic: "University of Minnesota & Certifications",
-    badge: "Academic & Professional Credentials",
-    response: `<strong>Education:</strong> Bachelor of Science in Data Science from the <strong>University of Minnesota, Twin Cities</strong>.<br>
-    <strong>Certifications & Track:</strong><br>
-    <ul>
-      <li>Databricks Certified Professional Data Engineer <em>(In Progress)</em></li>
-      <li>Google Cloud Certified Professional Data Engineer <em>(In Progress)</em></li>
-      <li>AWS Certified Cloud Practitioner <em>(Foundational Cloud Architecture)</em></li>
-      <li>Okta Certified Professional <em>(Identity Access Management & App Security)</em></li>
+      <li><strong>Outside Viewership Protection:</strong> External visitors cannot spend Shiva's cloud credits or access private resources.</li>
     </ul>`
   }
 };
 
-function initPersonalIntelligence() {
+function initAgenticIntelligence() {
   const outputBox = document.getElementById('intelOutputBox');
   const promptButtons = document.querySelectorAll('.intel-prompt-btn');
   const customInput = document.getElementById('intelCustomInput');
@@ -120,7 +123,7 @@ function initPersonalIntelligence() {
 
     outputBox.innerHTML = `
       <div class="intel-badge">${data.badge}</div>
-      <h5 class="fw-bold mb-2 text-gemini-gradient">${data.topic}</h5>
+      <h5 class="fw-bold mb-2 text-agent-gradient">${data.topic}</h5>
       <div class="text-secondary small line-height-lg">${data.response}</div>
     `;
   }
@@ -139,15 +142,17 @@ function initPersonalIntelligence() {
       const query = customInput.value.toLowerCase().trim();
       if (!query) return;
 
-      let matchedKey = 'frontier';
-      if (query.includes('yuka') || query.includes('grocery') || query.includes('food') || query.includes('ai app')) {
+      let matchedKey = 'claude-code';
+      if (query.includes('claude') || query.includes('codex') || query.includes('antigravity') || query.includes('agent')) {
+        matchedKey = 'claude-code';
+      } else if (query.includes('frontier') || query.includes('verizon') || query.includes('pyspark') || query.includes('databricks')) {
+        matchedKey = 'frontier';
+      } else if (query.includes('yuka') || query.includes('grocery') || query.includes('food') || query.includes('app')) {
         matchedKey = 'yuka';
-      } else if (query.includes('cloud') || query.includes('gcp') || query.includes('databricks') || query.includes('cost') || query.includes('trial')) {
+      } else if (query.includes('cloud') || query.includes('gcp') || query.includes('trial') || query.includes('cost')) {
         matchedKey = 'cloud';
-      } else if (query.includes('security') || query.includes('leak') || query.includes('secret') || query.includes('key') || query.includes('okta')) {
+      } else if (query.includes('security') || query.includes('leak') || query.includes('secret') || query.includes('key')) {
         matchedKey = 'security';
-      } else if (query.includes('degree') || query.includes('school') || query.includes('cert') || query.includes('minnesota') || query.includes('education')) {
-        matchedKey = 'education';
       }
 
       displayTopic(matchedKey);
@@ -224,13 +229,14 @@ function initMockRunner() {
 
   runnerBtn.addEventListener('click', () => {
     terminalOutput.innerHTML = `
-<span class="text-info">[INIT]</span> Initializing Databricks 14-Day Trial Bootstrap...
+<span class="text-warning">[CLAUDE CODE]</span> Executing cloud-infra daemon: databricks_trial_bootstrap.py
+<span class="text-info">[INIT]</span> Initializing Databricks 14-Day Trial Capped Compute...
 <span class="text-success">[CHECK]</span> Auth protocol: Keyless Workload Identity. Zero stored secrets detected.
-<span class="text-info">[CONFIG]</span> Compute config: Single-node standard (Driver: Standard_D4ds_v5, Workers: 0).
-<span class="text-warning">[GUARD]</span> Auto-termination idle threshold locked to 15m. Max spend cap: $0.00 billable overage.
-<span class="text-info">[UNITY]</span> Mounting Delta Medallion schemas: /raw_landing &rarr; /bronze &rarr; /silver &rarr; /gold.
-<span class="text-success">[DONE]</span> Cluster ready. Cluster ID: 1003-trial-sandbox-capped.
-<span class="text-muted">Status: Running within free limits. Scheduled teardown daemon active.</span>
+<span class="text-info">[CONFIG]</span> Single-node compute driver: Standard_D4ds_v5 (0 workers).
+<span class="text-warning">[GUARD]</span> Auto-termination idle threshold locked to 15m. Billable overage cap: $0.00.
+<span class="text-info">[UNITY]</span> Mounting Delta Medallion schemas: /raw &rarr; /bronze &rarr; /silver &rarr; /gold.
+<span class="text-success">[DONE]</span> Cluster ready. Cluster ID: trial-capped-sandbox-1003.
+<span class="text-muted">Status: Running within 14-day free trial limits. Auto-shutdown daemon active.</span>
     `;
   });
 }

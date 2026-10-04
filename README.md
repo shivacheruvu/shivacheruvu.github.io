@@ -6,7 +6,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Zero-Leak: BYOK Compliant](https://img.shields.io/badge/Security-BYOK%20Zero--Leak-success)](SECURITY.md)
 
-This repository powers the personal portfolio and engineering showcase for **Shiva Preetham Chinthalacheruvu**, redesigned around forward-deployed enterprise data engineering on **Databricks, Delta Lake, PySpark, and Cloud Lakehouse Architectures (AWS & GCP)**, integrated with modern **Google Antigravity & Gemini Personal Intelligence**.
+This repository powers the personal portfolio and engineering showcase for **Shiva Preetham Chinthalacheruvu**, redesigned around forward-deployed enterprise data engineering on **Databricks, Delta Lake, PySpark, and Cloud Lakehouse Architectures (AWS & GCP)**, integrated with modern agentic development prioritizing **Claude Code CLI**, **Google Antigravity**, and **OpenAI Codex**.
 
 ---
 
