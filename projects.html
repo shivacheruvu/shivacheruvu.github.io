@@ -1,115 +1,555 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Projects</title>
-    <!-- Favicon-->
+    <meta name="description" content="Projects Portfolio - Shiva Cheruvu: AI End-to-End Apps, Cloud & Data Infra Micro-Tools, and Legacy Data Science Engineering." />
+    <meta name="author" content="Shiva Preetham Chinthalacheruvu" />
+    <title>Projects | Shiva Cheruvu - AI Frontier Portfolio</title>
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Custom Google font-->
+    
+    <!-- Google Fonts & Bootstrap Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    
+    <!-- Core Bootstrap & Custom Design System -->
     <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
 </head>
-<body class="d-flex flex-column h-100 bg-light">
-    <main class="flex-shrink-0">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-            <div class="container px-5">
-                <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Shiva Preetham Chinthalacheruvu</span></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    </ul>
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Modern Sticky Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-modern py-3">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <span class="status-dot"></span>
+                <span class="navbar-brand-name">Shiva Cheruvu</span>
+            </a>
+            
+            <div class="d-flex align-items-center gap-2 d-lg-none">
+                <button class="theme-toggle-btn" id="themeToggleBtnMobile" aria-label="Toggle theme">
+                    <i class="bi bi-moon-stars-fill text-primary"></i>
+                </button>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-list fs-2 text-main"></i>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-1">
+                    <li class="nav-item"><a class="nav-link nav-link-modern" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern" href="about.html">About & AI</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern active" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern" href="contact.html">Contact</a></li>
+                    
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0 d-none d-lg-block">
+                        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle theme">
+                            <i class="bi bi-moon-stars-fill text-primary"></i>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a class="btn btn-sm btn-gemini px-3 py-2" href="assets/Shiva_Chinthalacheruvu_Resume.pdf" download="Shiva_Chinthalacheruvu_Resume.pdf">
+                            <i class="bi bi-download"></i> Resume PDF
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="py-5" style="background: var(--bg-surface); border-bottom: 1px solid var(--border-color);">
+        <div class="container px-4 px-lg-5 text-center">
+            <span class="badge-ai mb-2"><i class="bi bi-folder-check"></i> Project Showcase</span>
+            <h1 class="display-5 fw-bold mb-3">Engineered Systems & AI Architecture</h1>
+            <p class="text-muted lead mx-auto" style="max-width: 720px;">
+                Organized into 3 distinct sections: End-to-End AI consumer applications, cost-capped Cloud & Databricks micro-tooling, and production legacy data engineering.
+            </p>
+        </div>
+    </header>
+
+    <!-- Filter Buttons Bar -->
+    <section class="py-4 border-bottom" style="background: var(--bg-body);">
+        <div class="container px-4 px-lg-5">
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Projects (3 Sections)</button>
+                <button class="filter-btn" data-filter="ai-e2e">01. AI End-to-End App</button>
+                <button class="filter-btn" data-filter="cloud-infra">02. Cloud & Infra Micro-Tools</button>
+                <button class="filter-btn" data-filter="legacy">03. Legacy & College Projects</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Container -->
+    <main class="py-5" style="background: var(--bg-body);">
+        <div class="container px-4 px-lg-5">
+
+            <!-- ============================================================
+                 SECTION 1: AI END-TO-END CONSUMER PROJECT
+                 SmartGrocery AI / Yuka Replacement
+                 ============================================================ -->
+            <div class="project-item mb-5" data-category="ai-e2e" id="section-ai">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <div>
+                        <span class="badge-ai mb-1"><i class="bi bi-stars"></i> SECTION 01 &middot; AI END-TO-END</span>
+                        <h2 class="fw-bold mb-0">SmartGrocery AI &mdash; Open-Source Yuka Replacement</h2>
+                        <div class="text-muted small">Daily Consumer Utility &middot; Multimodal Vision OCR &middot; Cost-Optimization Engine</div>
+                    </div>
+                    <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 px-3 py-2 fw-bold d-none d-md-inline-block">
+                        Active Casing Deployed
+                    </span>
+                </div>
+
+                <div class="card-modern p-4 p-md-5 mb-4">
+                    <div class="row g-4 align-items-center mb-4">
+                        <div class="col-lg-8">
+                            <h4 class="fw-bold mb-2">The Mission: Solving Everyday Grocery Overhead with Open AI</h4>
+                            <p class="text-secondary line-height-lg mb-3">
+                                I grocery shop every day and rely heavily on food quality scanning apps like Yuka to avoid toxic additives. However, existing commercial apps lock ingredient insights behind recurring paywalls, sell user habits, and do nothing to help shoppers optimize grocery bills.
+                            </p>
+                            <p class="text-secondary line-height-lg mb-0">
+                                <strong>SmartGrocery AI</strong> is an end-to-end open architecture replacing Yuka while introducing real-time local price arbitrage. Shoppers snap a barcode or nutrition panel; the system runs multimodal OCR through <strong>Gemini Vision</strong>, evaluates additives against toxicology research, and cross-references nearby grocery stores to calculate cost savings on healthier alternatives.
+                            </p>
+                        </div>
+                        <div class="col-lg-4 text-center">
+                            <div class="p-3 rounded-4" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                                <div class="text-gemini-gradient fw-bold fs-4 mb-1">BYOK Model</div>
+                                <div class="small text-muted mb-2">Bring-Your-Own-Key Client Architecture</div>
+                                <div class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 p-2 small w-100">
+                                    <i class="bi bi-shield-lock-fill"></i> Zero Resource Leakage
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Architecture Diagram Cards -->
+                    <div class="mb-4">
+                        <h5 class="fw-bold mb-3"><i class="bi bi-diagram-3 text-primary me-2"></i> End-to-End Pipeline Architecture</h5>
+                        <div class="row g-3">
+                            <div class="col-md-3">
+                                <div class="p-3 rounded-3 h-100" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                                    <span class="badge bg-primary bg-opacity-10 text-primary small mb-2">Step 1: Capture</span>
+                                    <div class="fw-bold small mb-1">Mobile Barcode / OCR</div>
+                                    <div class="small text-muted">WebRTC camera stream captures barcode + ingredient label with lighting normalization.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="p-3 rounded-3 h-100" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                                    <span class="badge bg-purple bg-opacity-10 text-purple small mb-2" style="color: #9333ea;">Step 2: AI Vision</span>
+                                    <div class="fw-bold small mb-1">Gemini Multimodal OCR</div>
+                                    <div class="small text-muted">Zero-shot parsing of chemical names, emulsifiers, artificial sweeteners, and E-numbers.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="p-3 rounded-3 h-100" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                                    <span class="badge bg-success bg-opacity-10 text-success small mb-2">Step 3: Scoring</span>
+                                    <div class="fw-bold small mb-1">Toxicology & Price Index</div>
+                                    <div class="small text-muted">Evaluates endocrine disruptors + matches OpenFoodFacts & regional supermarket pricing feeds.</div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="p-3 rounded-3 h-100" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                                    <span class="badge bg-info bg-opacity-10 text-info small mb-2">Step 4: Lakehouse</span>
+                                    <div class="fw-bold small mb-1">Delta Medallion Store</div>
+                                    <div class="small text-muted">Caches scanned items in local DuckDB/Delta Lake format for instant sub-millisecond retrieval.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security & Replication Guardrail Callout -->
+                    <div class="security-banner mb-4">
+                        <div class="d-flex align-items-start gap-3">
+                            <i class="bi bi-shield-check text-success fs-3"></i>
+                            <div>
+                                <h6 class="fw-bold text-main mb-1">Replicate On Your Own &mdash; Zero Resource Leakage Defense</h6>
+                                <p class="text-secondary small mb-2">
+                                    To protect my cloud infrastructure from outside billing exploitation, this app implements a strict client-side Bring-Your-Own-Key (BYOK) model. Visitors can fork and run this system using their own free Gemini API key without consuming my quotas or accessing my accounts.
+                                </p>
+                                <div class="code-window mb-0">
+                                    <div class="code-header">
+                                        <span>.env.example &mdash; Safe Replication Config</span>
+                                        <button class="copy-btn" data-target="envExampleCode"><i class="bi bi-clipboard"></i> Copy</button>
+                                    </div>
+                                    <div class="code-content" id="envExampleCode">
+# SmartGrocery AI - Zero-Leak Replication Configuration
+# Enter your own FREE Gemini API Key (https://aistudio.google.com/):
+GEMINI_API_KEY="your-free-gemini-api-key-here"
+
+# Local Storage (Zero Cloud Spend):
+LOCAL_DELTA_LAKE_PATH="./data/medallion_store"
+PRICE_CACHE_ENABLED=true
+MAX_DAILY_SCANS=100
+PORT=8000
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Scan Simulation Casing -->
+                    <div class="p-4 rounded-4" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h5 class="fw-bold mb-0"><i class="bi bi-upc-scan text-gemini-gradient me-2"></i> Interactive Casing Preview: Simulated Scan</h5>
+                            <span class="small text-muted font-monospace">Engine Casing v1.0</span>
+                        </div>
+                        <p class="text-muted small mb-3">Click a sample grocery item to preview the AI toxicology detection and grocery cost-arbitrage output:</p>
+                        
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <button class="btn btn-sm btn-secondary-modern" onclick="simulateScan('cereal')">
+                                <i class="bi bi-box-seam"></i> Scan: Ultra-Processed Cereal
+                            </button>
+                            <button class="btn btn-sm btn-secondary-modern" onclick="simulateScan('oats')">
+                                <i class="bi bi-flower1"></i> Scan: Organic Rolled Oats
+                            </button>
+                            <button class="btn btn-sm btn-secondary-modern" onclick="simulateScan('bar')">
+                                <i class="bi bi-lightning"></i> Scan: High-Protein Energy Bar
+                            </button>
+                        </div>
+
+                        <div id="scanResultOutput" class="p-3 rounded-3" style="background: var(--bg-body); border: 1px solid var(--border-color); font-size: 0.88rem;">
+                            <div class="text-muted text-center py-3">Select a sample grocery item above to simulate the Gemini Multimodal Vision analysis.</div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-3 mt-4 border-top border-secondary border-opacity-10">
+                        <div class="d-flex flex-wrap gap-1">
+                            <span class="badge-tech">Python FastAPI</span>
+                            <span class="badge-ai">Gemini 2.5 Flash Vision</span>
+                            <span class="badge-cloud">Delta Lake / DuckDB</span>
+                            <span class="badge-tech">Docker Container</span>
+                        </div>
+                        <span class="small text-muted">
+                            <i class="bi bi-git"></i> Claude is generating the core app repo &bull; Casing ready for code merge
+                        </span>
+                    </div>
                 </div>
             </div>
-        </nav>
-        <!-- Projects Section-->
-        <section class="py-5">
-            <div class="container px-5 mb-5">
-                <div class="text-center mb-5">
-                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Projects</span></h1>
+
+            <!-- ============================================================
+                 SECTION 2: FUNCTIONAL TOOLING & MICROFEATURES
+                 Cloud & Data Infra Shortcuts (GCP & Databricks)
+                 ============================================================ -->
+            <div class="project-item mb-5" data-category="cloud-infra" id="section-microtools">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <div>
+                        <span class="badge-cloud mb-1"><i class="bi bi-cloud-arrow-up-fill"></i> SECTION 02 &middot; CLOUD & DATA INFRA</span>
+                        <h2 class="fw-bold mb-0">Functional Tooling & Microfeatures</h2>
+                        <div class="text-muted small">Cost-Capped Infrastructure Shortcuts &middot; Databricks 14-Day Trial &middot; GCP Credit Guardrails</div>
+                    </div>
+                    <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-3 py-2 fw-bold d-none d-md-inline-block">
+                        Infra Shortcuts Casing
+                    </span>
                 </div>
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-11 col-xl-9 col-xxl-8">
-                        <!-- Project Card 1-->
-                        <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                            <div class="card-body p-0">
-                                <div class="d-flex align-items-center">
-                                    <div class="p-5">
-                                        <h2 class="fw-bolder">NBA Clustering Project</h2>
-                                        <p>Professional basketball positions have unique roles and responsibilities that influence player strategies, team formations, and game tactics. Traditional classification methods depend on human judgment and specific attributes/stats. Machine learning, however, can automate and potentially enhance the accuracy of this classification process.</p>
+
+                <div class="card-modern p-4 p-md-5 mb-4">
+                    <p class="text-secondary line-height-lg mb-4">
+                        This section contains modular infrastructure tooling developed to demonstrate production-grade cloud management under strict budget boundaries. The Databricks implementation is engineered to survive within the <strong>14-day free trial</strong> without accidental billing, while GCP microfeatures safely leverage free promotional credits with automatic spend-caps and Workload Identity Federation.
+                    </p>
+
+                    <div class="row g-4 mb-4">
+                        <!-- Tool 1: Databricks 14-Day Trial Daemon -->
+                        <div class="col-lg-6">
+                            <div class="p-4 rounded-4 h-100 d-flex flex-column" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <span class="badge-cloud"><i class="bi bi-clock-history"></i> Micro-Tool 01</span>
+                                    <span class="badge bg-warning bg-opacity-10 text-warning small">14-Day Trial Guard</span>
+                                </div>
+                                <h5 class="fw-bold mb-2">Databricks Trial Rapid Bootstrap & Auto-Shutdown Daemon</h5>
+                                <p class="text-muted small flex-grow-1">
+                                    Automated YAML and Python daemon that provisions single-node Databricks clusters with an immutable 15-minute inactivity termination rule. Sets up Unity Catalog schemas (<code>bronze</code>, <code>silver</code>, <code>gold</code>) and halts all idle compute to eliminate surprise overages.
+                                </p>
+                                <div class="code-window mb-3">
+                                    <div class="code-header">
+                                        <span>cluster-config.yaml &mdash; Cost-Capped</span>
+                                        <button class="copy-btn" data-target="databricksYamlCode"><i class="bi bi-clipboard"></i> Copy</button>
                                     </div>
-                                    <img class="img-fluid" src="https://cdn.nba.com/teams/uploads/sites/1610612750/2023/06/GettyImages-1246683699.jpg" alt="..." />
+                                    <div class="code-content" id="databricksYamlCode">
+cluster_name: "trial-cost-capped-cluster"
+spark_version: "14.3.x-scala2.12"
+node_type_id: "Standard_D4ds_v5"
+autotermination_minutes: 15  # Strict trial limit
+spark_conf:
+  "spark.databricks.cluster.profile": "singleNode"
+  "spark.master": "local[*]"
+custom_tags:
+  "Environment": "14DayTrial"
+  "CostCenter": "ZeroOverage"
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Project Card 2-->
-                        <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                            <div class="card-body p-0">
-                                <div class="d-flex align-items-center">
-                                    <div class="p-5">
-                                        <h2 class="fw-bolder">Sales Dashboard and Data Visualization - Tableau</h2>
-                                        <p>This project focuses on analyzing sales performance using Tableau, a powerful data visualization tool. The primary goal is to provide comprehensive insights into sales data, enabling data-driven decision-making for businesses.</p>
+
+                        <!-- Tool 2: GCP Credit Guardrails -->
+                        <div class="col-lg-6">
+                            <div class="p-4 rounded-4 h-100 d-flex flex-column" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <span class="badge-cloud"><i class="bi bi-google"></i> Micro-Tool 02</span>
+                                    <span class="badge bg-info bg-opacity-10 text-info small">GCP Free Credit Safe</span>
+                                </div>
+                                <h5 class="fw-bold mb-2">GCP Free-Tier Lakehouse Starter & Billing Caps</h5>
+                                <p class="text-muted small flex-grow-1">
+                                    Terraform and Bash scripts to configure Google Cloud Storage lifecycle rules (auto-transition to Nearline/Coldline after 30 days) and BigQuery query-byte quotas so queries can never exceed free GCP trial allocations. Configures keyless GitHub Actions via Workload Identity.
+                                </p>
+                                <div class="code-window mb-3">
+                                    <div class="code-header">
+                                        <span>gcp_guardrails.sh &mdash; Workload Identity</span>
+                                        <button class="copy-btn" data-target="gcpScriptCode"><i class="bi bi-clipboard"></i> Copy</button>
                                     </div>
-                                    <img class="img-fluid" src="https://wallpapercave.com/wp/wp2239537.jpg" alt="..." />
+                                    <div class="code-content" id="gcpScriptCode">
+# Enforce BigQuery maximum billed bytes cap per query:
+bq update --default_query_job_timeout_ms 300000
+bq update --maximum_bytes_billed 10737418240 # 10GB Max Query Guard
+
+# Set GCS lifecycle to Coldline to conserve trial credit:
+gsutil lifecycle set gcs-lifecycle-rule.json gs://shiva-trial-lakehouse/
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Project Card 3-->
-                        <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-                            <div class="card-body p-0">
-                                <div class="d-flex align-items-center">
-                                    <div class="p-5">
-                                        <h2 class="fw-bolder">Slow Pitch Automated Review Calculation (Slow ARC) - Software Engineering</h2>
-                                        <p>The SLOW-ARC project aims to develop an affordable and efficient automated system to determine whether pitches in slow-pitch softball are strikes or balls. This system addresses the high costs associated with existing high-speed camera tracking systems like Hawk-Eye, making advanced review technology accessible to local sports organizations.</p>
-                                    </div>
-                                    <img class="img-fluid" src="https://th.bing.com/th/id/R.ef2c5a7c26219cb76a3c68d18947294e?rik=s7yaXDCAIoVgsA&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f08%2fFree-Softball-Wallpaper-Download.jpg&ehk=XKdyeq%2bVPDE2pLkIVTzA9j%2b9I%2bKXzKkJmFbkyJK8os8%3d&risl=&pid=ImgRaw&r=0" alt="..." />
-                                </div>
+                    </div>
+
+                    <!-- Interactive Micro-Tool Output Viewer -->
+                    <div class="p-4 rounded-4" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+                            <div>
+                                <h5 class="fw-bold mb-1"><i class="bi bi-terminal text-success me-2"></i> Live Microfeature Execution Console</h5>
+                                <div class="small text-muted">Test the cluster bootstrap daemon inside this sandboxed casing.</div>
+                            </div>
+                            <button class="btn btn-sm btn-gemini" id="runMicrotoolBtn">
+                                <i class="bi bi-play-fill"></i> Execute Bootstrap Daemon
+                            </button>
+                        </div>
+
+                        <div class="code-window mb-0">
+                            <div class="code-header">
+                                <span>Output Console &bull; sandbox-terminal</span>
+                                <span class="badge bg-secondary bg-opacity-25 text-white small">idle</span>
+                            </div>
+                            <div class="code-content text-light" id="microtoolConsole" style="min-height: 120px; font-family: var(--font-mono);">
+<span class="text-muted">// Click "Execute Bootstrap Daemon" to simulate cost-capped cluster bootstrap and Unity Catalog mount...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-3 mt-4 border-top border-secondary border-opacity-10">
+                        <div class="d-flex flex-wrap gap-1">
+                            <span class="badge-cloud">Databricks Workflows</span>
+                            <span class="badge-cloud">GCP BigQuery & GCS</span>
+                            <span class="badge-tech">PySpark</span>
+                            <span class="badge-ai">Workload Identity</span>
+                        </div>
+                        <span class="small text-muted">
+                            <i class="bi bi-arrow-repeat"></i> Claude building repo &bull; Casing ready to render upcoming microfeatures
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================================
+                 SECTION 3: LEGACY & COLLEGE PROJECTS
+                 NBA Clustering, SLOW-ARC, Tableau, Schema Utility
+                 ============================================================ -->
+            <div class="project-item mb-5" data-category="legacy" id="section-legacy">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <div>
+                        <span class="badge-tech mb-1"><i class="bi bi-mortarboard-fill"></i> SECTION 03 &middot; PRODUCTION & COLLEGE</span>
+                        <h2 class="fw-bold mb-0">Legacy & College Engineering Projects</h2>
+                        <div class="text-muted small">Machine Learning &middot; Computer Vision &middot; Enterprise Visualizations &middot; Metadata Utilities</div>
+                    </div>
+                    <span class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 px-3 py-2 fw-bold d-none d-md-inline-block">
+                        Shipped Repositories
+                    </span>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Project 1: NBA Clustering -->
+                    <div class="col-lg-6">
+                        <div class="card-modern p-4 h-100 d-flex flex-column">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <span class="badge-tech">Machine Learning</span>
+                                <a href="https://github.com/shivacheruvu/NBA-Clustering-Project" target="_blank" rel="noopener" class="text-muted" aria-label="GitHub Repository">
+                                    <i class="bi bi-github fs-5"></i>
+                                </a>
+                            </div>
+                            <h4 class="fw-bold mb-2">NBA Clustering Project</h4>
+                            <p class="text-secondary small flex-grow-1">
+                                Professional basketball has evolved past conventional positions (Point Guard through Center). This project uses unsupervised machine learning (K-Means, Principal Component Analysis, and Hierarchical Clustering) on NBA player tracking metrics to automate and enhance tactical classification, revealing hybrid role archetypes.
+                            </p>
+                            <div class="d-flex flex-wrap gap-1 mb-3">
+                                <span class="badge-tech">Python</span>
+                                <span class="badge-tech">Scikit-Learn</span>
+                                <span class="badge-tech">PCA & K-Means</span>
+                                <span class="badge-tech">Pandas</span>
+                            </div>
+                            <a href="https://github.com/shivacheruvu/NBA-Clustering-Project" target="_blank" rel="noopener" class="btn btn-sm btn-secondary-modern w-100">
+                                <i class="bi bi-github"></i> Inspect NBA Clustering Repo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: SLOW-ARC -->
+                    <div class="col-lg-6">
+                        <div class="card-modern p-4 h-100 d-flex flex-column">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <span class="badge-tech">Computer Vision</span>
+                                <a href="https://github.com/shivacheruvu/SLOW-ARC" target="_blank" rel="noopener" class="text-muted" aria-label="GitHub Repository">
+                                    <i class="bi bi-github fs-5"></i>
+                                </a>
+                            </div>
+                            <h4 class="fw-bold mb-2">Slow Pitch Automated Review Calculation (SLOW-ARC)</h4>
+                            <p class="text-secondary small flex-grow-1">
+                                High-speed camera tracking solutions like Hawk-Eye cost hundreds of thousands of dollars. SLOW-ARC develops an accessible, automated computer vision trajectory estimation system to determine balls and strikes in slow-pitch softball leagues, democratizing advanced officiating technology for local athletic organizations.
+                            </p>
+                            <div class="d-flex flex-wrap gap-1 mb-3">
+                                <span class="badge-tech">OpenCV</span>
+                                <span class="badge-tech">Python</span>
+                                <span class="badge-tech">Trajectory Math</span>
+                                <span class="badge-tech">Software Eng</span>
+                            </div>
+                            <a href="https://github.com/shivacheruvu/SLOW-ARC" target="_blank" rel="noopener" class="btn btn-sm btn-secondary-modern w-100">
+                                <i class="bi bi-github"></i> Inspect SLOW-ARC Repo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Tableau Sales Dashboard -->
+                    <div class="col-lg-6">
+                        <div class="card-modern p-4 h-100 d-flex flex-column">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <span class="badge-tech">Business Intelligence</span>
+                                <a href="https://github.com/shivacheruvu/Sales-Project---Tableau" target="_blank" rel="noopener" class="text-muted" aria-label="GitHub Repository">
+                                    <i class="bi bi-github fs-5"></i>
+                                </a>
+                            </div>
+                            <h4 class="fw-bold mb-2">Sales Dashboard & Data Visualization (Tableau)</h4>
+                            <p class="text-secondary small flex-grow-1">
+                                An executive business intelligence visualization suite analyzing enterprise sales performance. Features multi-level drilldowns into regional margins, customer retention curves, and revenue seasonality, transforming complex transactional records into actionable corporate insights.
+                            </p>
+                            <div class="d-flex flex-wrap gap-1 mb-3">
+                                <span class="badge-tech">Tableau</span>
+                                <span class="badge-tech">SQL</span>
+                                <span class="badge-tech">Data Modeling</span>
+                                <span class="badge-tech">KPI Reporting</span>
+                            </div>
+                            <a href="https://github.com/shivacheruvu/Sales-Project---Tableau" target="_blank" rel="noopener" class="btn btn-sm btn-secondary-modern w-100">
+                                <i class="bi bi-github"></i> Inspect Sales Tableau Repo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Schema & Primary Key Extraction Utility -->
+                    <div class="col-lg-6">
+                        <div class="card-modern p-4 h-100 d-flex flex-column">
+                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                <span class="badge-tech">Data Engineering Utility</span>
+                                <span class="badge bg-secondary bg-opacity-10 text-secondary small">Production CI/CD</span>
+                            </div>
+                            <h4 class="fw-bold mb-2">Automated Schema & Primary Key Extraction Utility</h4>
+                            <p class="text-secondary small flex-grow-1">
+                                Dynamic PySpark utility for programmatic column searches, metadata extraction, and primary key identification. Built for distributed teams to eliminate hardcoded SQL dependencies, cutting debugging time by over 50% with automated CI/CD schema drift alert emails.
+                            </p>
+                            <div class="d-flex flex-wrap gap-1 mb-3">
+                                <span class="badge-tech">PySpark</span>
+                                <span class="badge-tech">Metadata Engine</span>
+                                <span class="badge-tech">YAML CI/CD</span>
+                                <span class="badge-tech">Alerting Protocol</span>
+                            </div>
+                            <div class="p-2 rounded-2 bg-light text-muted small mt-auto border">
+                                <i class="bi bi-check2-circle text-success"></i> Integrated into enterprise data validation pipelines.
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- Call to action section-->
-        <section class="py-5 bg-gradient-primary-to-secondary text-white">
-            <div class="container px-5 my-5">
-                <div class="text-center">
-                    <h2 class="display-4 fw-bolder mb-4">Let's build something together</h2>
-                    <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.html">Contact me</a>
-                </div>
-            </div>
-        </section>
+
+        </div>
     </main>
-    <!-- Footer-->
-    <footer class="bg-white py-4 mt-auto">
-        <div class="container px-5">
-            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                <div class="col-auto"><div class="small m-0">Copyright &copy; Your Website 2023</div></div>
-                <div class="col-auto">
-                    <a class="small" href="#!">Privacy</a>
-                    <span class="mx-1">&middot;</span>
-                    <a class="small" href="#!">Terms</a>
-                    <span class="mx-1">&middot;</span>
-                    <a class="small" href="#!">Contact</a>
+
+    <!-- Modern Footer -->
+    <footer class="footer-modern mt-auto">
+        <div class="container px-4 px-lg-5">
+            <div class="row align-items-center justify-content-between gy-3">
+                <div class="col-md-6 text-center text-md-start">
+                    <div class="fw-bold text-main mb-1">Shiva Preetham Chinthalacheruvu</div>
+                    <div class="small text-muted">&copy; 2026 AI Frontier Portfolio. Built with Antigravity IDE & Google Gemini.</div>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="d-flex justify-content-center justify-content-md-end gap-3 fs-5">
+                        <a href="https://github.com/shivacheruvu" class="footer-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/shivacheruvu/" class="footer-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://dot.cards/shivacheruvu" class="footer-link" target="_blank" rel="noopener" aria-label="Dot Profile"><i class="bi bi-person-badge"></i></a>
+                        <a href="mailto:shivacheruvu6@gmail.com" class="footer-link" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
+
+    <!-- Bootstrap Bundle JS & Custom Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>
+
+    <!-- Interactive Scan Simulation Script for SmartGrocery AI Casing -->
+    <script>
+    function simulateScan(itemType) {
+        const output = document.getElementById('scanResultOutput');
+        if (!output) return;
+
+        if (itemType === 'cereal') {
+            output.innerHTML = `
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="fw-bold fs-6 text-danger"><i class="bi bi-exclamation-triangle-fill"></i> Health Score: 24/100 (Poor)</span>
+                    <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25">Ultra-Processed (NOVA 4)</span>
+                </div>
+                <div class="mb-2"><strong>Scanned Item:</strong> Commercial Frosted Flakes ($5.49 @ Supermarket A)</div>
+                <div class="small text-danger mb-2">
+                    &bull; Flagged Additives: BHT (Preservative / Endocrine Disruptor), High-Fructose Corn Syrup (34g added sugar).
+                </div>
+                <div class="p-2 rounded bg-success bg-opacity-10 border border-success border-opacity-25 small text-success">
+                    <i class="bi bi-piggy-bank-fill me-1"></i> <strong>SmartGrocery Price Arbitrage:</strong>
+                    Switch to <em>Store Brand Whole Grain Toasted Oats</em> ($2.79 @ Supermarket B).
+                    <strong>Save $2.70 (49%) + Zero Artificial Preservatives.</strong>
+                </div>
+            `;
+        } else if (itemType === 'oats') {
+            output.innerHTML = `
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="fw-bold fs-6 text-success"><i class="bi bi-check-circle-fill"></i> Health Score: 96/100 (Excellent)</span>
+                    <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25">Whole Food (NOVA 1)</span>
+                </div>
+                <div class="mb-2"><strong>Scanned Item:</strong> 100% Organic Rolled Oats ($3.89)</div>
+                <div class="small text-success mb-2">
+                    &bull; Zero flagged chemical additives. High dietary beta-glucan fiber (4g per serving).
+                </div>
+                <div class="p-2 rounded bg-primary bg-opacity-10 border border-primary border-opacity-25 small text-primary">
+                    <i class="bi bi-cart-check-fill me-1"></i> <strong>Store Comparison:</strong>
+                    Best bulk pricing available at Local Co-op ($0.12/oz vs $0.24/oz packaged).
+                </div>
+            `;
+        } else if (itemType === 'bar') {
+            output.innerHTML = `
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <span class="fw-bold fs-6 text-warning"><i class="bi bi-exclamation-circle-fill"></i> Health Score: 52/100 (Moderate)</span>
+                    <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25">Processed (NOVA 3)</span>
+                </div>
+                <div class="mb-2"><strong>Scanned Item:</strong> Chocolate Peanut Butter Protein Bar ($2.99)</div>
+                <div class="small text-secondary mb-2">
+                    &bull; Flagged Additives: Sucralose (Artificial Sweetener), Palm Kernel Oil emulsifiers. 20g Protein.
+                </div>
+                <div class="p-2 rounded bg-success bg-opacity-10 border border-success border-opacity-25 small text-success">
+                    <i class="bi bi-piggy-bank-fill me-1"></i> <strong>SmartGrocery Alternative:</strong>
+                    Raw Almond Butter + Greek Yogurt snack alternative.
+                    <strong>Save $1.20 per serving + eliminate artificial sweeteners.</strong>
+                </div>
+            `;
+        }
+    }
+    </script>
 </body>
 </html>
