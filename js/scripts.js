@@ -65,9 +65,9 @@ const INTEL_KNOWLEDGE_BASE = {
     </ul>`
   },
   "frontier": {
-    topic: "Enterprise Delta Lake & PySpark (Frontier/Verizon)",
+    topic: "Enterprise Delta Lake & PySpark (Verizon)",
     badge: "Databricks & Delta Lake",
-    response: `At <strong>Frontier/Verizon</strong>, Shiva serves as a Forward Deployed Data Engineer, modernizing legacy enterprise data warehouses:<br>
+    response: `At <strong>Verizon</strong>, Shiva serves as a Forward Deployed Data Engineer, modernizing legacy enterprise data warehouses:<br>
     <ul>
       <li><strong>Informatica Migration:</strong> Architected PySpark pipelines replacing legacy IICS & Oracle ETL, cutting runtime by <strong>42%</strong>.</li>
       <li><strong>Lakehouse Ingestion:</strong> Ingests multi-gigabyte compressed <code>.gz</code> archives into Delta Lake Medallion (Bronze &rarr; Silver &rarr; Gold) with Z-Ordering and partition pruning for <strong>3.5x query acceleration</strong>.</li>
