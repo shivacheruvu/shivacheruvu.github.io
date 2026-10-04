@@ -1,180 +1,389 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Resume</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Custom Google font-->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body class="d-flex flex-column h-100 bg-white">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Shiva Preetham Chinthalacheruvu</span></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        </ul>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Resume of Shiva Preetham Chinthalacheruvu - Data Engineer (Forward Deployed), PySpark, Databricks, Delta Lake, AWS, GCP." />
+    <meta name="author" content="Shiva Preetham Chinthalacheruvu" />
+    <title>Resume | Shiva Preetham Chinthalacheruvu</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    
+    <!-- Google Fonts & Bootstrap Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    
+    <!-- Core Bootstrap & Custom Design System -->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Modern Sticky Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-modern py-3">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <span class="status-dot"></span>
+                <span class="navbar-brand-name">Shiva Cheruvu</span>
+            </a>
+            
+            <div class="d-flex align-items-center gap-2 d-lg-none">
+                <button class="theme-toggle-btn" id="themeToggleBtnMobile" aria-label="Toggle theme">
+                    <i class="bi bi-moon-stars-fill text-primary"></i>
+                </button>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-list fs-2 text-main"></i>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-1">
+                    <li class="nav-item"><a class="nav-link nav-link-modern" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern" href="about.html">About & AI</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern active" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern" href="contact.html">Contact</a></li>
+                    
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0 d-none d-lg-block">
+                        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle theme">
+                            <i class="bi bi-moon-stars-fill text-primary"></i>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a class="btn btn-sm btn-gemini px-3 py-2" href="assets/Shiva_Chinthalacheruvu_Resume.pdf" download="Shiva_Chinthalacheruvu_Resume.pdf">
+                            <i class="bi bi-download"></i> Download PDF
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="py-5" style="background: var(--bg-surface); border-bottom: 1px solid var(--border-color);">
+        <div class="container px-4 px-lg-5">
+            <div class="row align-items-center justify-content-between gy-4">
+                <div class="col-lg-8">
+                    <div class="status-badge mb-2">
+                        <span class="status-dot"></span>
+                        <span>Latest 2026 Edition</span>
                     </div>
+                    <h1 class="display-5 fw-bold mb-2">Curriculum Vitae</h1>
+                    <p class="text-muted lead mb-0">
+                        Data Engineer experienced in scalable PySpark pipelines, modernizing legacy enterprise data warehouses, and cloud lakehouse architecture on Databricks, AWS, and GCP.
+                    </p>
                 </div>
-            </nav>
-            <!-- Page Content-->
-            <div class="container px-5 my-5">
-                <div class="text-center mb-5">
-                    <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Resume</span></h1>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="btn btn-gemini px-4 py-3" href="assets/Shiva_Chinthalacheruvu_Resume.pdf" download="Shiva_Chinthalacheruvu_Resume.pdf">
+                        <i class="bi bi-file-earmark-pdf-fill fs-5"></i>
+                        <span>Download Official PDF</span>
+                    </a>
                 </div>
-                <div class="row gx-5 justify-content-center">
-                    <div class="col-lg-11 col-xl-9 col-xxl-8">
-                        <!-- Experience Section-->
-                        <section>
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h2 class="text-primary fw-bolder mb-0">Experience</h2>
-                                <!-- Download resume button-->
-                                <!-- Note: Set the link href target to a PDF file within your project-->
-                                <a class="btn btn-primary px-4 py-3" href="#!">
-                                    <div class="d-inline-block bi bi-download me-2"></div>
-                                    Download Resume
-                                </a>
-                            </div>
-                            <!-- Experience Card 1-->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">May 2023 - August 2023</div>
-                                                <div class="text-dark small fw-bolder">Information Security Analyst</div>
-                                                <div class="small text-muted">Finthrive</div>
-                                                <div class="small text-muted">Dallas, TX</div>
-                                            </div>
-                                        </div>
-                                        <div class="text-dark col-lg-8"><div>At FinThrive, I worked as an Information Security Analyst with S&P Global, focusing on Vulnerability Management and integrating applications with OKTA for SSO. I participated in architecture review meetings and used tools like Rapid7 Nexpose, Tanium, and Qualys. I achieved a 25% improvement in processes through gap analysis on remediation and exceptions.</div></div>
-                                    </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Resume Body -->
+    <main class="py-5" style="background: var(--bg-body);">
+        <div class="container px-4 px-lg-5">
+            <div class="row g-5">
+                
+                <!-- Left Main Column: Experience & Projects -->
+                <div class="col-lg-8">
+                    
+                    <!-- Section: Experience -->
+                    <div class="mb-5">
+                        <div class="d-flex align-items-center gap-2 mb-4">
+                            <i class="bi bi-briefcase-fill text-primary fs-3"></i>
+                            <h2 class="fw-bold mb-0">Professional Experience</h2>
+                        </div>
+
+                        <!-- Role 1: Verizon -->
+                        <div class="card-modern p-4 p-md-5 mb-4">
+                            <div class="d-flex flex-wrap align-items-start justify-content-between gap-2 mb-3">
+                                <div>
+                                    <h4 class="fw-bold mb-1">Verizon</h4>
+                                    <div class="text-gemini-gradient fw-bold">Data Engineer (Forward Deployed)</div>
+                                </div>
+                                <div class="text-end">
+                                    <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 px-3 py-2 fw-bold">Mar 2025 &ndash; Present</span>
                                 </div>
                             </div>
-                            <!-- Experience Card 2-->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">May 2019 - August 2019</div>
-                                                <div class="text-dark small fw-bolder">Retail Salesperson</div>
-                                                <div class="small text-muted">Microcenter Inc</div>
-                                                <div class="small text-muted">St.Louis Park, MN</div>
-                                            </div>
-                                        </div>
-                                        <div class="text-dark col-lg-8"><div>As a Retail Salesperson at Microcenter, I helped develop a refurbished program for OEM CPU parts, including implementing SSO for inventory management. I managed $11,000 in receipts, maintained store appearance, and increased sales by 25% through effective upselling and customer communication.</div></div>
-                                    </div>
+
+                            <p class="text-muted small mb-3">
+                                <i class="bi bi-geo-alt"></i> Forward-Deployed Telecommunications Engineering &middot; Delta Lake Modernization
+                            </p>
+
+                            <ul class="text-secondary line-height-lg mb-4">
+                                <li class="mb-2">
+                                    <strong>Informatica Migration:</strong> Architected and deployed scalable <strong>PySpark</strong> pipelines on <strong>Databricks</strong> to replace legacy Informatica (IICS) and Oracle ETL workflows, cutting pipeline runtime by <span class="badge bg-success bg-opacity-10 text-success fw-bold">42%</span> and successfully decommissioning legacy infrastructure.
+                                </li>
+                                <li class="mb-2">
+                                    <strong>Stakeholder POCs:</strong> Embedded directly with telecommunications stakeholders to engineer custom Databricks POCs, translating complex operational requirements into automated tracking frameworks and production-ready data pipelines.
+                                </li>
+                                <li class="mb-2">
+                                    <strong>Store-and-Forward Ingestion:</strong> Designed store-and-forward batch ingestion frameworks processing multi-gigabyte compressed <code>.gz</code> files into Delta Lake Medallion architectures, optimizing partition pruning and Z-Ordering to accelerate queries by <span class="badge bg-success bg-opacity-10 text-success fw-bold">3.5x</span>.
+                                </li>
+                                <li class="mb-2">
+                                    <strong>Automated Reconciliation Engine:</strong> Built an automated production diff and reconciliation engine using PySpark to perform primary key validation, schema drift detection, and discrepancy logging across <strong>billions of records</strong> between on-prem EDW and cloud storage.
+                                </li>
+                                <li class="mb-2">
+                                    <strong>SLA Optimization:</strong> Configured modular Databricks Multi-Task Workflows utilizing YAML-based task definitions, conditional job execution, and automated alerting protocols to achieve <span class="badge bg-success bg-opacity-10 text-success fw-bold">99.9% pipeline SLA reliability</span>.
+                                </li>
+                                <li>
+                                    <strong>Data Governance & Compliance:</strong> Implemented end-to-end OneTrust and CCPA automated deletion pipelines across Databricks Unity Catalog storage volumes and object stores, ensuring <strong>100% enterprise regulatory compliance</strong>.
+                                </li>
+                            </ul>
+
+                            <div class="d-flex flex-wrap gap-1 pt-2 border-top border-secondary border-opacity-10">
+                                <span class="badge-tech">PySpark</span>
+                                <span class="badge-tech">Databricks</span>
+                                <span class="badge-tech">Delta Lake</span>
+                                <span class="badge-cloud">AWS S3</span>
+                                <span class="badge-cloud">GCP GCS</span>
+                                <span class="badge-cloud">Unity Catalog</span>
+                                <span class="badge-ai">YAML Workflows</span>
+                                <span class="badge-ai">OneTrust</span>
+                            </div>
+                        </div>
+
+                        <!-- Role 2: The Insight INC -->
+                        <div class="card-modern p-4 p-md-5 mb-4">
+                            <div class="d-flex flex-wrap align-items-start justify-content-between gap-2 mb-3">
+                                <div>
+                                    <h4 class="fw-bold mb-1">The Insight INC</h4>
+                                    <div class="text-gemini-gradient fw-bold">Technical Data Analyst</div>
+                                </div>
+                                <div class="text-end">
+                                    <span class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 px-3 py-2 fw-bold">Dec 2024 &ndash; Mar 2025</span>
                                 </div>
                             </div>
-                        </section>
-                        <!-- Education Section-->
-                        <section>
-                            <h2 class="text-primary fw-bolder mb-4">Education</h2>
-                            <!-- Education Card 1-->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <div class="row align-items-center gx-5">
-                                        <div class="col text-center text-lg-start mb-4 mb-lg-0">
-                                            <div class="bg-light p-4 rounded-4">
-                                                <div class="text-primary fw-bolder mb-2">2021 - 2024</div>
-                                                <div class="mb-2">
-                                                    <div class="text-dark small fw-bolder">University of Minnesota</div>
-                                                    <div class="small text-muted">Minneapolis, MN</div>
-                                                </div>
-                                                <div class="fst-italic">
-                                                    <div class="small text-muted">Bachelor's</div>
-                                                    <div class="small text-muted">Data Science</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="text-dark col-lg-8"><div>I am pursuing a Bachelor of Science in Data Science at the University of Minnesota, Twin Cities, graduating in December 2025. My coursework includes software development, data structures, statistical computing, database systems, optimization, data modeling, machine learning, and securitization. This education has equipped me with essential skills for data analysis, data engineering, and information security roles.</div></div>
-                                    </div>
+
+                            <p class="text-muted small mb-3">
+                                <i class="bi bi-geo-alt"></i> Enterprise Data Analytics &middot; Cross-System Reconciliation
+                            </p>
+
+                            <ul class="text-secondary line-height-lg mb-4">
+                                <li class="mb-2">
+                                    <strong>Cross-System Reconciliation:</strong> Led cross-system data reconciliation, writing complex SQL and PySpark scripts to investigate log file count mismatches, identify data type conversion errors, and resolve severe timestamp filtering anomalies.
+                                </li>
+                                <li class="mb-2">
+                                    <strong>Query-Ready Modeling:</strong> Engineered highly optimized, query-ready data models specifically structured for downstream dashboard exploration, directly accelerating business intelligence query response times for executive stakeholders.
+                                </li>
+                                <li class="mb-2">
+                                    <strong>Pipeline Monitoring:</strong> Developed a dynamic tracking framework that ingested unstructured operational logs into consolidated reporting tables, generating automated KPI discrepancy reports to monitor end-to-end pipeline health.
+                                </li>
+                                <li>
+                                    <strong>Historical Backfill:</strong> Wrote advanced SQL queries utilizing complex date-filtering options and window functions to isolate missing historical records, executing targeted backfill procedures to ensure <strong>100% financial data completeness</strong>.
+                                </li>
+                            </ul>
+
+                            <div class="d-flex flex-wrap gap-1 pt-2 border-top border-secondary border-opacity-10">
+                                <span class="badge-tech">SQL</span>
+                                <span class="badge-tech">PySpark</span>
+                                <span class="badge-tech">Data Modeling</span>
+                                <span class="badge-tech">Window Functions</span>
+                                <span class="badge-cloud">ETL/ELT</span>
+                                <span class="badge-ai">KPI Automation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section: Resume-Featured Engineering Project -->
+                    <div class="mb-5">
+                        <div class="d-flex align-items-center gap-2 mb-4">
+                            <i class="bi bi-cpu-fill text-primary fs-3"></i>
+                            <h2 class="fw-bold mb-0">Featured Engineering Utility</h2>
+                        </div>
+
+                        <div class="card-modern p-4 p-md-5">
+                            <div class="d-flex flex-wrap align-items-start justify-content-between gap-2 mb-3">
+                                <div>
+                                    <h4 class="fw-bold mb-1">Automated Schema & Primary Key Extraction Utility</h4>
+                                    <div class="text-gemini-gradient fw-bold">Distributed Metadata & Drift Alert Engine</div>
+                                </div>
+                                <div>
+                                    <span class="badge bg-secondary bg-opacity-10 text-secondary border border-secondary border-opacity-25 px-3 py-2 fw-bold">Feb 2024 &ndash; Mar 2024</span>
                                 </div>
                             </div>
-                            <!-- Education Card 2-->
-                            
-                        <!-- Skills Section-->
-                        <section>
-                            <!-- Skillset Card-->
-                            <div class="card shadow border-0 rounded-4 mb-5">
-                                <div class="card-body p-5">
-                                    <!-- Professional skills list-->
-                                    <div class="mb-5">
-                                        <div class="d-flex align-items-center mb-4">
-                                            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-tools"></i></div>
-                                            <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Professional Skills</span></h3>
-                                        </div>
-                                        <div class="row row-cols-1 row-cols-md-3 mb-4">
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light text-dark fw-bolder rounded-4 p-3 h-100">Identity and Access Management (SSO)</div></div>
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light text-dark fw-bolder rounded-4 p-3 h-100">Tableau Data Visualization</div></div>
-                                            <div class="col"><div class="d-flex align-items-center bg-light text-dark fw-bolder rounded-4 p-3 h-100">TensorFlow</div></div>
-                                        </div>
-                                        <div class="row row-cols-1 row-cols-md-3">
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light text-dark fw-bolder rounded-4 p-3 h-100">AWS</div></div>
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light text-dark fw-bolder rounded-4 p-3 h-100">Apache Suite</div></div>
-                                            <div class="col"><div class="d-flex align-items-center bg-light text-dark fw-bolder rounded-4 p-3 h-100">MongoDB</div></div>
-                                        </div>
-                                    </div>
-                                    <!-- Languages list-->
-                                    <div class="mb-0">
-                                        <div class="d-flex align-items-center mb-4">
-                                            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 me-3"><i class="bi bi-code-slash"></i></div>
-                                            <h3 class="fw-bolder mb-0"><span class="text-gradient d-inline">Languages</span></h3>
-                                        </div>
-                                        <div class="row row-cols-1 row-cols-md-3 mb-4">
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light text-dark fw-bolder rounded-4 p-3 h-100">Python</div></div>
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light text-dark fw-bolder rounded-4 p-3 h-100">SQL</div></div>
-                                            <div class="col"><div class="d-flex align-items-center bg-light text-dark fw-bolder rounded-4 p-3 h-100">R</div></div>
-                                        </div>
-                                        <div class="row row-cols-1 row-cols-md-3">
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light text-dark fw-bolder rounded-4 p-3 h-100">Java</div></div>
-                                            <div class="col mb-4 mb-md-0"><div class="d-flex align-items-center bg-light text-dark fw-bolder rounded-4 p-3 h-100">Julia</div></div>
-                                            <div class="col"><div class="d-flex align-items-center bg-light text-dark fw-bolder rounded-4 p-3 h-100">Node.js</div></div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <ul class="text-secondary line-height-lg mb-3">
+                                <li class="mb-2">
+                                    Developed a dynamic PySpark utility for programmatic schema column searching, metadata extraction, and primary key identification, eliminating hardcoded dependencies and cutting team debugging time by <strong>over 50%</strong>.
+                                </li>
+                                <li>
+                                    Integrated extraction scripts into a CI/CD pipeline, configuring YAML workflows to send automated, formatted notification alerts containing schema drift reports directly to on-call engineering teams.
+                                </li>
+                            </ul>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span class="badge-tech">PySpark</span>
+                                <span class="badge-tech">Metadata Engine</span>
+                                <span class="badge-ai">YAML CI/CD</span>
+                                <span class="badge-ai">Drift Alerts</span>
                             </div>
-                        </section>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right Sidebar Column: Education, Certifications, Skills Matrix -->
+                <div class="col-lg-4">
+                    
+                    <!-- Education Card -->
+                    <div class="card-modern p-4 mb-4">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <i class="bi bi-mortarboard-fill text-primary fs-4"></i>
+                            <h4 class="fw-bold mb-0">Education</h4>
+                        </div>
+                        <div class="p-3 rounded-3" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                            <div class="fw-bold fs-5">University of Minnesota</div>
+                            <div class="text-gemini-gradient fw-bold">Bachelor of Science in Data Science</div>
+                            <div class="small text-muted mt-2">
+                                Focus on distributed systems, data modeling, algorithm optimization, statistical computing, and information security.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Certifications Card -->
+                    <div class="card-modern p-4 mb-4">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <i class="bi bi-shield-check text-success fs-4"></i>
+                            <h4 class="fw-bold mb-0">Certifications</h4>
+                        </div>
+                        
+                        <div class="mb-3 p-3 rounded-3" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <span class="fw-bold small">Databricks Certified Professional Data Engineer</span>
+                                <span class="badge bg-warning bg-opacity-10 text-warning small">In Progress</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 p-3 rounded-3" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <span class="fw-bold small">Google Cloud Professional Data Engineer</span>
+                                <span class="badge bg-warning bg-opacity-10 text-warning small">In Progress</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 p-3 rounded-3" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <span class="fw-bold small">AWS Certified Cloud Practitioner</span>
+                                <span class="badge bg-success bg-opacity-10 text-success small">Certified</span>
+                            </div>
+                            <div class="small text-muted mt-1">Cloud architecture & secure deployment.</div>
+                        </div>
+
+                        <div class="p-3 rounded-3" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <span class="fw-bold small">Okta Certified Professional</span>
+                                <span class="badge bg-success bg-opacity-10 text-success small">Certified</span>
+                            </div>
+                            <div class="small text-muted mt-1">Identity Access Management & App Security.</div>
+                        </div>
+                    </div>
+
+                    <!-- Skills Matrix -->
+                    <div class="card-modern p-4 mb-4">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <i class="bi bi-code-slash text-gemini-gradient fs-4"></i>
+                            <h4 class="fw-bold mb-0">Technical Skills</h4>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="small fw-bold text-muted mb-2">LANGUAGES</div>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span class="badge-tech">Python</span>
+                                <span class="badge-tech">PySpark</span>
+                                <span class="badge-tech">SQL</span>
+                                <span class="badge-tech">Bash</span>
+                                <span class="badge-tech">Java</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="small fw-bold text-muted mb-2">DATA ENGINEERING</div>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span class="badge-cloud">Databricks</span>
+                                <span class="badge-cloud">Delta Lake</span>
+                                <span class="badge-cloud">ETL / ELT</span>
+                                <span class="badge-cloud">Apache Spark</span>
+                                <span class="badge-cloud">Z-Ordering</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="small fw-bold text-muted mb-2">CLOUD & STORAGE</div>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span class="badge-cloud">AWS (S3, EC2)</span>
+                                <span class="badge-cloud">GCP (GCS, BigQuery)</span>
+                                <span class="badge-cloud">Azure</span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="small fw-bold text-muted mb-2">DATABASES</div>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span class="badge-tech">Snowflake</span>
+                                <span class="badge-tech">PostgreSQL</span>
+                                <span class="badge-tech">Oracle</span>
+                                <span class="badge-tech">Informix</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="small fw-bold text-muted mb-2">AUTONOMOUS AGENTS, ORCHESTRATION & TOOLS</div>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span class="badge-claude"><i class="bi bi-terminal-fill"></i> Claude Code CLI</span>
+                                <span class="badge-ai">Antigravity IDE</span>
+                                <span class="badge-tech">OpenAI Codex</span>
+                                <span class="badge-ai">Databricks Workflows</span>
+                                <span class="badge-ai">YAML CI/CD</span>
+                                <span class="badge-ai">OneTrust</span>
+                                <span class="badge-ai">Git / Gitleaks</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PDF Direct Viewer Card -->
+                    <div class="card-modern p-4 text-center">
+                        <i class="bi bi-file-earmark-pdf fs-1 text-danger mb-2"></i>
+                        <h5 class="fw-bold mb-2">Download Resume PDF</h5>
+                        <p class="text-muted small mb-3">Official one-page resume format for technical recruiters and hiring managers.</p>
+                        <a href="assets/Shiva_Chinthalacheruvu_Resume.pdf" class="btn btn-gemini w-100" download="Shiva_Chinthalacheruvu_Resume.pdf">
+                            <i class="bi bi-download"></i> Download Resume
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Modern Footer -->
+    <footer class="footer-modern mt-auto">
+        <div class="container px-4 px-lg-5">
+            <div class="row align-items-center justify-content-between gy-3">
+                <div class="col-md-6 text-center text-md-start">
+                    <div class="fw-bold text-main mb-1">Shiva Preetham Chinthalacheruvu</div>
+                    <div class="small text-muted">&copy; 2026 AI Frontier Portfolio. Built with Antigravity IDE & Google Gemini.</div>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="d-flex justify-content-center justify-content-md-end gap-3 fs-5">
+                        <a href="https://github.com/shivacheruvu" class="footer-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/shivacheruvu/" class="footer-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://dot.cards/shivacheruvu" class="footer-link" target="_blank" rel="noopener" aria-label="Dot Profile"><i class="bi bi-person-badge"></i></a>
+                        <a href="mailto:shivacheruvu6@gmail.com" class="footer-link" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
                     </div>
                 </div>
             </div>
-        </main>
-        <!-- Footer-->
-        <footer class="bg-white py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0">Copyright &copy; Your Website 2023</div></div>
-                    <div class="col-auto">
-                        <a class="small" href="#!">Privacy</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Terms</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Contact</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS & Custom Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
 </html>

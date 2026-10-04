@@ -1,133 +1,261 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content />
-        <meta name="author" content />
-        <title>Contact</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Custom Google font-->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body class="d-flex flex-column">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Shiva Preetham Chinthalacheruvu</span></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        </ul>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Contact Shiva Preetham Chinthalacheruvu - Data Engineer, Forward Deployed Systems, and AI Cloud Pipelines." />
+    <meta name="author" content="Shiva Preetham Chinthalacheruvu" />
+    <title>Contact | Shiva Preetham Chinthalacheruvu</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    
+    <!-- Google Fonts & Bootstrap Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    
+    <!-- Core Bootstrap & Custom Design System -->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Modern Sticky Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-modern py-3">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <span class="status-dot"></span>
+                <span class="navbar-brand-name">Shiva Cheruvu</span>
+            </a>
+            
+            <div class="d-flex align-items-center gap-2 d-lg-none">
+                <button class="theme-toggle-btn" id="themeToggleBtnMobile" aria-label="Toggle theme">
+                    <i class="bi bi-moon-stars-fill text-primary"></i>
+                </button>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-list fs-2 text-main"></i>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-1">
+                    <li class="nav-item"><a class="nav-link nav-link-modern" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern" href="about.html">About & AI</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern active" href="contact.html">Contact</a></li>
+                    
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0 d-none d-lg-block">
+                        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle theme">
+                            <i class="bi bi-moon-stars-fill text-primary"></i>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a class="btn btn-sm btn-gemini px-3 py-2" href="assets/Shiva_Chinthalacheruvu_Resume.pdf" download="Shiva_Chinthalacheruvu_Resume.pdf">
+                            <i class="bi bi-download"></i> Resume PDF
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="py-5" style="background: var(--bg-surface); border-bottom: 1px solid var(--border-color);">
+        <div class="container px-4 px-lg-5 text-center">
+            <span class="badge-ai mb-2"><i class="bi bi-envelope-paper-heart"></i> Get In Touch</span>
+            <h1 class="display-5 fw-bold mb-3">Let's Build Resilient Systems Together</h1>
+            <p class="text-muted lead mx-auto" style="max-width: 650px;">
+                Open to discussions regarding forward-deployed data engineering roles, Databricks lakehouse modernizations, and AI data systems.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Contact Section -->
+    <main class="py-5" style="background: var(--bg-body);">
+        <div class="container px-4 px-lg-5">
+            <div class="row g-5 justify-content-center">
+                
+                <!-- Direct Reach Cards -->
+                <div class="col-lg-5">
+                    <div class="d-flex flex-column gap-3">
+                        
+                        <!-- Email Card -->
+                        <div class="card-modern p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="p-3 rounded-circle bg-primary bg-opacity-10 text-primary">
+                                        <i class="bi bi-envelope-fill fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <div class="small text-muted fw-bold">DIRECT EMAIL</div>
+                                        <div class="fw-bold text-main" id="userEmailText">shivacheruvu6@gmail.com</div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-sm btn-secondary-modern" id="copyEmailBtn" onclick="copyEmail()">
+                                    <i class="bi bi-clipboard"></i> Copy
+                                </button>
+                            </div>
+                            <div class="small text-muted mt-2">
+                                Guaranteed response within 24 hours.
+                            </div>
+                        </div>
+
+                        <!-- LinkedIn Card -->
+                        <div class="card-modern p-4">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="p-3 rounded-circle bg-info bg-opacity-10 text-info">
+                                        <i class="bi bi-linkedin fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <div class="small text-muted fw-bold">PROFESSIONAL NETWORK</div>
+                                        <div class="fw-bold text-main">linkedin.com/in/shivacheruvu</div>
+                                    </div>
+                                </div>
+                                <a href="https://www.linkedin.com/in/shivacheruvu/" target="_blank" rel="noopener" class="btn btn-sm btn-secondary-modern">
+                                    <i class="bi bi-box-arrow-up-right"></i> Connect
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- GitHub Card -->
+                        <div class="card-modern p-4">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="p-3 rounded-circle bg-secondary bg-opacity-10 text-main">
+                                        <i class="bi bi-github fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <div class="small text-muted fw-bold">OPEN SOURCE CODE</div>
+                                        <div class="fw-bold text-main">github.com/shivacheruvu</div>
+                                    </div>
+                                </div>
+                                <a href="https://github.com/shivacheruvu" target="_blank" rel="noopener" class="btn btn-sm btn-secondary-modern">
+                                    <i class="bi bi-box-arrow-up-right"></i> Follow
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Dot.cards Profile -->
+                        <div class="card-modern p-4">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="p-3 rounded-circle bg-purple bg-opacity-10 text-purple" style="color: #9333ea;">
+                                        <i class="bi bi-person-vcard fs-4"></i>
+                                    </div>
+                                    <div>
+                                        <div class="small text-muted fw-bold">DIGITAL BUSINESS CARD</div>
+                                        <div class="fw-bold text-main">dot.cards/shivacheruvu</div>
+                                    </div>
+                                </div>
+                                <a href="https://dot.cards/shivacheruvu" target="_blank" rel="noopener" class="btn btn-sm btn-secondary-modern">
+                                    <i class="bi bi-box-arrow-up-right"></i> Open Card
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-            </nav>
-            <!-- Page content-->
-            <section class="py-5">
-                <div class="container px-5">
-                    <!-- Contact form-->
-                    <div class="bg-light rounded-4 py-5 px-4 px-md-5">
-                        <div class="text-center mb-5">
-                            <div class="feature bg-primary bg-gradient-primary-to-secondary text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-                            <h1 class="fw-bolder">Get in touch</h1>
-                            <p class="lead fw-normal text-muted mb-0">Let's work together!</p>
+
+                <!-- Interactive Email Builder Form -->
+                <div class="col-lg-6">
+                    <div class="card-modern p-4 p-md-5">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h4 class="fw-bold mb-0">Send a Direct Message</h4>
+                            <span class="badge bg-success bg-opacity-10 text-success small"><i class="bi bi-shield-check"></i> Spam-Proof</span>
                         </div>
-                        <div class="row gx-5 justify-content-center">
-                            <div class="col-lg-8 col-xl-6">
-                                <!-- * * * * * * * * * * * * * * *-->
-                                <!-- * * SB Forms Contact Form * *-->
-                                <!-- * * * * * * * * * * * * * * *-->
-                                <!-- This form is pre-integrated with SB Forms.-->
-                                <!-- To make this form functional, sign up at-->
-                                <!-- https://startbootstrap.com/solution/contact-forms-->
-                                <!-- to get an API token!-->
-                                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                                    <!-- Name input-->
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                        <label for="name">Full name</label>
-                                        <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                                    </div>
-                                    <!-- Email address input-->
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                        <label for="email">Email address</label>
-                                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                                    </div>
-                                    <!-- Phone number input-->
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                        <label for="phone">Phone number</label>
-                                        <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                                    </div>
-                                    <!-- Message input-->
-                                    <div class="form-floating mb-3">
-                                        <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                        <label for="message">Message</label>
-                                        <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                                    </div>
-                                    <!-- Submit success message-->
-                                    <!---->
-                                    <!-- This is what your users will see when the form-->
-                                    <!-- has successfully submitted-->
-                                    <div class="d-none" id="submitSuccessMessage">
-                                        <div class="text-center mb-3">
-                                            <div class="fw-bolder">Form submission successful!</div>
-                                            To activate this form, sign up at
-                                            <br />
-                                            <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                        </div>
-                                    </div>
-                                    <!-- Submit error message-->
-                                    <!---->
-                                    <!-- This is what your users will see when there is-->
-                                    <!-- an error submitting the form-->
-                                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                                    <!-- Submit Button-->
-                                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
-                                </form>
+                        <p class="text-muted small mb-4">
+                            Fill in your details below to launch a pre-formatted email directly to Shiva's inbox. Zero third-party tracker scripts.
+                        </p>
+
+                        <form id="portfolioContactForm" onsubmit="handleContactSubmit(event)">
+                            <div class="mb-3">
+                                <label for="senderName" class="form-label small fw-bold text-muted">YOUR NAME</label>
+                                <input type="text" class="form-control" id="senderName" placeholder="Jane Doe" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="senderSubject" class="form-label small fw-bold text-muted">SUBJECT</label>
+                                <input type="text" class="form-control" id="senderSubject" placeholder="Data Engineering Opportunity / Lakehouse Query" required />
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="senderMessage" class="form-label small fw-bold text-muted">MESSAGE</label>
+                                <textarea class="form-control" id="senderMessage" rows="5" placeholder="Hi Shiva, I came across your portfolio and wanted to discuss..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-gemini w-100 py-3">
+                                <i class="bi bi-send-fill"></i> Launch Email in Mail Client
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Security and Privacy Disclosure -->
+                    <div class="security-banner mt-4">
+                        <div class="d-flex align-items-start gap-3">
+                            <i class="bi bi-shield-lock-fill text-success fs-4"></i>
+                            <div>
+                                <div class="fw-bold small text-main">Privacy & Anti-Phishing Safeguards</div>
+                                <div class="small text-muted">
+                                    Raw telephone numbers and personal addresses are excluded from public web pages to thwart automated bot scrapers. For formal employment verifications, please reference the official downloadable resume or connect on LinkedIn.
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
-        <!-- Footer-->
-        <footer class="bg-white py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0">Copyright &copy; Your Website 2023</div></div>
-                    <div class="col-auto">
-                        <a class="small" href="#!">Privacy</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Terms</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Contact</a>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Modern Footer -->
+    <footer class="footer-modern mt-auto">
+        <div class="container px-4 px-lg-5">
+            <div class="row align-items-center justify-content-between gy-3">
+                <div class="col-md-6 text-center text-md-start">
+                    <div class="fw-bold text-main mb-1">Shiva Preetham Chinthalacheruvu</div>
+                    <div class="small text-muted">&copy; 2026 AI Frontier Portfolio. Built with Antigravity IDE & Google Gemini.</div>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="d-flex justify-content-center justify-content-md-end gap-3 fs-5">
+                        <a href="https://github.com/shivacheruvu" class="footer-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/shivacheruvu/" class="footer-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://dot.cards/shivacheruvu" class="footer-link" target="_blank" rel="noopener" aria-label="Dot Profile"><i class="bi bi-person-badge"></i></a>
+                        <a href="mailto:shivacheruvu6@gmail.com" class="footer-link" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS & Custom Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+
+    <script>
+    function copyEmail() {
+        const email = "shivacheruvu6@gmail.com";
+        navigator.clipboard.writeText(email).then(() => {
+            const btn = document.getElementById('copyEmailBtn');
+            btn.innerHTML = '<i class="bi bi-check-lg text-success"></i> Copied!';
+            setTimeout(() => {
+                btn.innerHTML = '<i class="bi bi-clipboard"></i> Copy';
+            }, 2000);
+        });
+    }
+
+    function handleContactSubmit(event) {
+        event.preventDefault();
+        const name = document.getElementById('senderName').value;
+        const subject = document.getElementById('senderSubject').value;
+        const message = document.getElementById('senderMessage').value;
+
+        const mailtoUrl = `mailto:shivacheruvu6@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + name + "\n\n" + message)}`;
+        window.location.href = mailtoUrl;
+    }
+    </script>
+</body>
 </html>

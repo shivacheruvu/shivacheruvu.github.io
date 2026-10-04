@@ -1,218 +1,421 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Personal - Shiva Preetham Chinthalacheruvu's Portfolio</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Custom Google font-->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body class="d-flex flex-column h-100">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Shiva Preetham Chinthalacheruvu</span></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="resume.html">Resume</a></li>
-                            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <!-- Header-->
-            <header class="py-5">
-                <div class="container px-5 pb-5">
-                    <div class="row gx-5 align-items-center">
-                        <div class="col-xxl-5">
-                            <!-- Header text content-->
-                            <div class="text-center text-xxl-start">
-                                <div class="badge bg-gradient-primary-to-secondary text-dark mb-4"><div class="text-uppercase">Information Security &middot; Data Engineering &middot; Data Analytics</div></div>
-                                <div class="fs-3 fw-light text-muted">I can help your organization</div>
-                                <h1 class="display-3 fw-bolder mb-5"><span class="text-gradient d-inline">Harness Data, Ensure Security, and Drive Insights</span></h1>
-                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                                    <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="resume.html">Resume</a>
-                                    <a class="btn btn-primary btn-lg px-5 py-3 fs-6 fw-bolder" href="projects.html">Projects</a>
-                                </div>
-                            </div>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Portfolio of Shiva Preetham Chinthalacheruvu - Forward Deployed Data Engineer specializing in PySpark, Databricks, Delta Lake, and Agentic Engineering with Claude Code, Antigravity, and Codex." />
+    <meta name="author" content="Shiva Preetham Chinthalacheruvu" />
+    <title>Shiva Cheruvu | Forward Deployed Data Engineer & AI Systems</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    
+    <!-- Google Fonts & Bootstrap Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    
+    <!-- Core Bootstrap & Custom Design System -->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- Modern Sticky Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-modern py-3">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <span class="status-dot"></span>
+                <span class="navbar-brand-name">Shiva Cheruvu</span>
+            </a>
+            
+            <div class="d-flex align-items-center gap-2 d-lg-none">
+                <button class="theme-toggle-btn" id="themeToggleBtnMobile" aria-label="Toggle theme">
+                    <i class="bi bi-moon-stars-fill text-primary"></i>
+                </button>
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="bi bi-list fs-2 text-main"></i>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-1">
+                    <li class="nav-item"><a class="nav-link nav-link-modern active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern" href="about.html">About & AI</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern" href="resume.html">Resume</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link nav-link-modern" href="contact.html">Contact</a></li>
+                    
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0 d-none d-lg-block">
+                        <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle theme" title="Toggle dark/light mode">
+                            <i class="bi bi-moon-stars-fill text-primary"></i>
+                        </button>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a class="btn btn-sm btn-gemini px-3 py-2" href="assets/Shiva_Chinthalacheruvu_Resume.pdf" download="Shiva_Chinthalacheruvu_Resume.pdf">
+                            <i class="bi bi-download"></i> Resume PDF
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Main Content (flex-shrink-0 prevents flexbox collapse) -->
+    <main class="flex-shrink-0">
+
+    <!-- Hero Section -->
+    <header class="hero-wrapper">
+        <div class="container px-4 px-lg-5">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-7">
+                    <div class="text-center text-lg-start">
+                        <div class="status-badge mb-3">
+                            <span class="status-dot"></span>
+                            <span>Forward Deployed Data Engineer &middot; Verizon</span>
                         </div>
-                        <div class="col-xxl-7">
-                            <!-- Header profile picture-->
-                            <div class="d-flex justify-content-center mt-5 mt-xxl-0">
-                                <div class="profile bg-gradient-primary-to-secondary">
-                                    <!-- TIP: For best results, use a photo with a transparent background like the demo example below-->
-                                    <!-- Watch a tutorial on how to do this on YouTube (link)-->
-                                    <img class="profile-img" src="assets/file.png" alt="..." />
-                                    <div class="dots-1">
-                                        <!-- SVG Dots-->
-                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                                <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                                <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                                <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                                <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                                <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                                <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                                <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                                <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                                <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                                <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                                <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                                <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                                <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                                <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                                <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                                <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                                <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                                <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                                <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                                <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                            </g>
-                                        </svg>
-                                        <!-- END of SVG dots-->
-                                    </div>
-                                    <div class="dots-2">
-                                        <!-- SVG Dots-->
-                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                                <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                                <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                                <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                                <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                                <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                                <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                                <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                                <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                                <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                                <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                                <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                                <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                                <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                                <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                                <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                                <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                                <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                                <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                                <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                                <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                            </g>
-                                        </svg>
-                                        <!-- END of SVG dots-->
-                                    </div>
-                                    <div class="dots-3">
-                                        <!-- SVG Dots-->
-                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                                <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                                <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                                <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                                <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                                <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                                <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                                <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                                <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                                <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                                <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                                <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                                <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                                <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                                <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                                <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                                <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                                <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                                <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                                <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                                <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                            </g>
-                                        </svg>
-                                        <!-- END of SVG dots-->
-                                    </div>
-                                    <div class="dots-4">
-                                        <!-- SVG Dots-->
-                                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 191.6 1215.4" style="enable-background: new 0 0 191.6 1215.4" xml:space="preserve">
-                                            <g transform="translate(0.000000,1280.000000) scale(0.100000,-0.100000)">
-                                                <path d="M227.7,12788.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,12801.6,289.7,12808.6,227.7,12788.6z"></path>
-                                                <path d="M1507.7,12788.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,12801.6,1569.7,12808.6,1507.7,12788.6z"></path>
-                                                <path d="M227.7,11508.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,11521.6,289.7,11528.6,227.7,11508.6z"></path>
-                                                <path d="M1507.7,11508.6c-151-50-253-216-222-362c25-119,136-230,254-255c194-41,395,142,375,339c-11,105-90,213-190,262        C1663.7,11521.6,1569.7,11528.6,1507.7,11508.6z"></path>
-                                                <path d="M227.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,10241.6,289.7,10248.6,227.7,10228.6z"></path>
-                                                <path d="M1507.7,10228.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,10241.6,1569.7,10248.6,1507.7,10228.6z"></path>
-                                                <path d="M227.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,8961.6,289.7,8968.6,227.7,8948.6z"></path>
-                                                <path d="M1507.7,8948.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,8961.6,1569.7,8968.6,1507.7,8948.6z"></path>
-                                                <path d="M227.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,7681.6,289.7,7688.6,227.7,7668.6z"></path>
-                                                <path d="M1507.7,7668.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,7681.6,1569.7,7688.6,1507.7,7668.6z"></path>
-                                                <path d="M227.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,6401.6,289.7,6408.6,227.7,6388.6z"></path>
-                                                <path d="M1507.7,6388.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,6401.6,1569.7,6408.6,1507.7,6388.6z"></path>
-                                                <path d="M227.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,5121.6,289.7,5128.6,227.7,5108.6z"></path>
-                                                <path d="M1507.7,5108.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,5121.6,1569.7,5128.6,1507.7,5108.6z"></path>
-                                                <path d="M227.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,3841.6,289.7,3848.6,227.7,3828.6z"></path>
-                                                <path d="M1507.7,3828.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,3841.6,1569.7,3848.6,1507.7,3828.6z"></path>
-                                                <path d="M227.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,2561.6,289.7,2568.6,227.7,2548.6z"></path>
-                                                <path d="M1507.7,2548.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,2561.6,1569.7,2568.6,1507.7,2548.6z"></path>
-                                                <path d="M227.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C383.7,1281.6,289.7,1288.6,227.7,1268.6z"></path>
-                                                <path d="M1507.7,1268.6c-105-35-200-141-222-248c-43-206,163-412,369-369c155,32,275,190,260,339c-11,105-90,213-190,262        C1663.7,1281.6,1569.7,1288.6,1507.7,1268.6z"></path>
-                                            </g>
-                                        </svg>
-                                        <!-- END of SVG dots-->
-                                    </div>
-                                </div>
-                            </div>
+                        
+                        <h1 class="hero-headline">
+                            Architecting <span class="text-agent-gradient">Resilient Data Pipelines</span> & Agentic Systems.
+                        </h1>
+                        
+                        <p class="hero-subtext mb-4">
+                            Modernizing enterprise data lakes with PySpark, Databricks, and Delta Lake across AWS & GCP. Pioneering autonomous agentic data engineering workflows with <strong class="text-main">Claude Code</strong>, Antigravity, and Codex.
+                        </p>
+                        
+                        <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3 mb-4">
+                            <a class="btn btn-claude" href="projects.html">
+                                <i class="bi bi-grid-fill"></i> View 3 Project Pillars
+                            </a>
+                            <a class="btn btn-secondary-modern" href="resume.html">
+                                <i class="bi bi-file-earmark-person"></i> Interactive Resume
+                            </a>
+                        </div>
+                        
+                        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start gap-2 pt-2">
+                            <span class="text-muted small fw-bold me-2">AI & INFRA STACK:</span>
+                            <span class="badge-claude"><i class="bi bi-terminal-fill"></i> Claude Code</span>
+                            <span class="badge-tech"><i class="bi bi-lightning-charge-fill"></i> PySpark</span>
+                            <span class="badge-tech"><i class="bi bi-layers-fill"></i> Databricks</span>
+                            <span class="badge-cloud"><i class="bi bi-cloud-check-fill"></i> GCP & AWS</span>
+                            <span class="badge-cloud"><i class="bi bi-database-fill"></i> Delta Lake</span>
+                            <span class="badge-ai"><i class="bi bi-cpu-fill"></i> Codex & Antigravity</span>
                         </div>
                     </div>
                 </div>
-            </header>
-            <!-- About Section-->
-            <section class="bg-light py-5">
-                <div class="container px-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-xxl-8">
-                            <div class="text-center my-5">
-                                <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">About Me</span></h2>
-                                <p class="lead text-dark fw-light mb-4">My name is Shiva Preetham Chinthalacheruvu and I specialize in transforming data into strategic insights to drive growth and security.</p>
-                                <p class="text-muted">I am a dedicated and detail-oriented data science major with a passion for transforming complex data into actionable insights. My academic journey has equipped me with a robust understanding of data analysis, data engineering, and information security. I thrive on solving challenging problems and leveraging data to drive strategic decisions. My experience includes working with various data tools and technologies, building data pipelines, and ensuring data integrity and security. I am eager to apply my skills to help organizations harness their data, enhance their security posture, and uncover valuable insights. Whether it’s developing advanced data models, engineering efficient data solutions, or safeguarding sensitive information, I am committed to delivering excellence in every project I undertake.</p>
-                                <div class="d-flex justify-content-center fs-2 gap-4">
-                                    <a class="text-gradient" href="https://dot.cards/shivacheruvu"><i class="bi bi-envelope"></i></a>
-                                    <a class="text-gradient" href="https://www.linkedin.com/in/shivacheruvu/"><i class="bi bi-linkedin"></i></a>
-                                    <a class="text-gradient" href="https://github.com/shivacheruvu/"><i class="bi bi-github"></i></a>
-                                </div>
-                            </div>
+                
+                <div class="col-lg-5">
+                    <div class="portrait-container">
+                        <div class="portrait-glow"></div>
+                        <div class="portrait-frame">
+                            <img src="assets/shiva_portrait.jpg" alt="Shiva Preetham Chinthalacheruvu" class="portrait-img" />
                         </div>
                     </div>
-                </div>
-            </section>
-        </main>
-        <!-- Footer-->
-        <footer class="bg-white py-4 mt-auto">
-            <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0">Copyright &copy; Your Website 2023</div></div>
-                    <div class="col-auto">
-                        <a class="small" href="#!">Privacy</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Terms</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="#!">Contact</a>
+                    <div class="text-center mt-3">
+                        <div class="d-inline-flex gap-2 flex-wrap justify-content-center">
+                            <span class="badge bg-primary bg-opacity-10 text-primary small py-1 px-2 border"><i class="bi bi-speedometer2"></i> 42% Faster Pipelines</span>
+                            <span class="badge bg-success bg-opacity-10 text-success small py-1 px-2 border"><i class="bi bi-shield-check"></i> Zero Secret Leaks</span>
+                            <span class="badge bg-info bg-opacity-10 text-info small py-1 px-2 border"><i class="bi bi-database-check"></i> Billions Reconciled</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+        </div>
+    </header>
+
+    <!-- Key Metrics & Engineering Proof Points -->
+    <section class="py-4 border-top border-bottom" style="background: var(--bg-surface);">
+        <div class="container px-4 px-lg-5">
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="stat-box">
+                        <div class="stat-number">42%</div>
+                        <div class="stat-label">Runtime Cut</div>
+                        <div class="stat-desc">Informatica &rarr; Databricks PySpark</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-box">
+                        <div class="stat-number">3.5x</div>
+                        <div class="stat-label">Query Acceleration</div>
+                        <div class="stat-desc">Delta Lake Z-Ordering & Partitioning</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-box">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Pipeline SLA</div>
+                        <div class="stat-desc">Modular YAML Databricks Workflows</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-box">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">CCPA Compliance</div>
+                        <div class="stat-desc">OneTrust & Unity Catalog Automation</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me & Engineering Philosophy Section (Directly on Home) -->
+    <section class="py-5" style="background: var(--bg-body);">
+        <div class="container px-4 px-lg-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-7">
+                    <div class="badge-claude mb-2"><i class="bi bi-person-badge"></i> About Shiva Cheruvu</div>
+                    <h2 class="display-6 fw-bold mb-3">Forward-Deployed Impact Powered by Autonomous Agents</h2>
+                    <p class="text-secondary line-height-lg mb-3">
+                        I am a Forward Deployed Data Engineer at <strong>Verizon</strong> and a Data Science graduate from the <strong>University of Minnesota</strong>. I specialize in bridging raw distributed data infrastructure with high-stakes business outcomes.
+                    </p>
+                    <p class="text-secondary line-height-lg mb-3">
+                        My development methodology is agentic-native: I prioritize <strong>Claude Code</strong> as my primary autonomous CLI partner for rapid PySpark transformation scaffolding, test synthesis, and infrastructure automation, supplemented by <strong>Google Antigravity</strong> and <strong>Codex</strong> for architectural modeling and deep static validation.
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 pt-2">
+                        <a href="about.html" class="btn btn-sm btn-secondary-modern">
+                            <i class="bi bi-arrow-right-circle"></i> Read Full Story & Philosophy
+                        </a>
+                        <a href="resume.html" class="btn btn-sm btn-secondary-modern">
+                            <i class="bi bi-file-text"></i> View Enterprise Experience
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-5">
+                    <div class="card-modern p-4">
+                        <h5 class="fw-bold mb-3"><i class="bi bi-terminal-split text-claude me-2"></i> The Agentic Pairing Triad</h5>
+                        
+                        <div class="mb-3 p-3 rounded-3" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span class="fw-bold small text-warning"><i class="bi bi-terminal-fill"></i> Claude Code CLI (Primary)</span>
+                                <span class="badge bg-warning bg-opacity-10 text-warning small">Driver</span>
+                            </div>
+                            <div class="small text-muted">Autonomous repo scaffolding, PySpark pipeline generation, git workflows, and test execution.</div>
+                        </div>
+
+                        <div class="mb-3 p-3 rounded-3" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span class="fw-bold small text-primary"><i class="bi bi-boxes"></i> Google Antigravity</span>
+                                <span class="badge bg-primary bg-opacity-10 text-primary small">Architect</span>
+                            </div>
+                            <div class="small text-muted">Deep architectural synthesis, personal intelligence integration, and multi-agent coordination.</div>
+                        </div>
+
+                        <div class="p-3 rounded-3" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                            <div class="d-flex align-items-center justify-content-between mb-1">
+                                <span class="fw-bold small text-info"><i class="bi bi-code-slash"></i> OpenAI Codex</span>
+                                <span class="badge bg-info bg-opacity-10 text-info small">Verification</span>
+                            </div>
+                            <div class="small text-muted">Complex algorithm optimizations, mathematical checks, and syntax cross-verification.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agentic Intelligence Module (Claude Code • Antigravity • Codex) -->
+    <section class="py-5" style="background: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="container px-4 px-lg-5">
+            <div class="row align-items-center mb-4">
+                <div class="col-lg-8">
+                    <div class="badge-ai mb-2"><i class="bi bi-cpu-fill"></i> Agentic Intelligence Module</div>
+                    <h2 class="fw-bold mb-2">Query Shiva's Technical Intelligence</h2>
+                    <p class="text-muted mb-0">Interactive agent terminal modeling Shiva's architecture, forward-deployed experience, and autonomous workflows.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <span class="text-muted small"><i class="bi bi-shield-lock-fill text-success"></i> Read-only sandboxed responses</span>
+                </div>
+            </div>
+
+            <div class="intel-card">
+                <div class="intel-header">
+                    <div class="intel-dots">
+                        <span class="intel-dot dot-red"></span>
+                        <span class="intel-dot dot-yellow"></span>
+                        <span class="intel-dot dot-green"></span>
+                    </div>
+                    <span class="small font-monospace text-muted"><i class="bi bi-terminal text-warning"></i> claude-code-cli &bull; antigravity-session &bull; codex</span>
+                    <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 py-1 px-2 small">ACTIVE</span>
+                </div>
+                
+                <div class="intel-body">
+                    <div class="mb-3">
+                        <label class="small text-muted fw-bold mb-2">SELECT A TOPIC OR ASK A QUESTION:</label>
+                        <div class="d-flex flex-wrap gap-2">
+                            <button class="intel-prompt-btn active" data-topic="claude-code">
+                                <i class="bi bi-terminal-fill text-warning"></i> Claude Code & Agentic Pipelines
+                            </button>
+                            <button class="intel-prompt-btn" data-topic="frontier">
+                                <i class="bi bi-layers text-primary"></i> Verizon Databricks Architecture
+                            </button>
+                            <button class="intel-prompt-btn" data-topic="yuka">
+                                <i class="bi bi-basket3 text-success"></i> SmartGrocery AI (Yuka Alternative)
+                            </button>
+                            <button class="intel-prompt-btn" data-topic="cloud">
+                                <i class="bi bi-cloud text-info"></i> Cloud & Databricks Cost Guardrails
+                            </button>
+                            <button class="intel-prompt-btn" data-topic="security">
+                                <i class="bi bi-shield-lock text-danger"></i> Zero-Leak Secret Defense & BYOK
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Custom Query Input -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text bg-transparent border-end-0 text-muted"><i class="bi bi-search"></i></span>
+                        <input type="text" id="intelCustomInput" class="form-control bg-transparent border-start-0 border-end-0" placeholder="Type a keyword (e.g. 'claude', 'verizon', 'yuka', 'cloud cost', 'security')..." />
+                        <button class="btn btn-claude px-4" id="intelSubmitBtn" type="button">Ask Agent</button>
+                    </div>
+
+                    <!-- Dynamic Output Box -->
+                    <div class="intel-output-box" id="intelOutputBox">
+                        <div class="intel-badge">Primary Agent Driver: Claude Code</div>
+                        <h5 class="fw-bold mb-2 text-agent-gradient">Autonomous Data Pipelines with Claude Code</h5>
+                        <div class="text-secondary small line-height-lg">
+                            <strong>Claude Code CLI</strong> serves as Shiva's primary agentic pairing partner for infrastructure automation and software engineering:
+                            <ul class="mt-2 mb-0">
+                                <li><strong>Autonomous Pipeline Generation:</strong> Utilizing Claude Code to rapidly scaffold PySpark medallion transformation models, automate YAML workflow configs, and orchestrate schema diffing scripts.</li>
+                                <li><strong>Test Synthesis & Static Verification:</strong> Claude Code automates edge-case unit test generation for data reconciliation, validating row-level assertions before execution on clusters.</li>
+                                <li><strong>Zero-Leak Defense:</strong> Claude Code is configured with strict credential avoidance rules—automatically stripping tokens, utilizing <code>.env.example</code> templates, and validating against local <code>gitleaks</code> pre-commit hooks.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Three Projects Pillars Overview -->
+    <section class="py-5" style="background: var(--bg-body);">
+        <div class="container px-4 px-lg-5">
+            <div class="text-center mb-5">
+                <span class="badge-tech mb-2">PORTFOLIO ARCHITECTURE</span>
+                <h2 class="display-6 fw-bold">The 3 Project Pillars</h2>
+                <p class="text-muted mx-auto" style="max-width: 650px;">
+                    Structured to showcase autonomous AI engineering, cloud cost-optimized infrastructure micro-tooling, and production-grade data modeling.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Pillar 1 -->
+                <div class="col-lg-4">
+                    <div class="card-modern h-100 p-4 d-flex flex-column">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="badge-ai"><i class="bi bi-stars"></i> Pillar 01</span>
+                            <span class="badge bg-primary bg-opacity-10 text-primary small">Active Casing</span>
+                        </div>
+                        <h4 class="fw-bold mb-2">AI End-to-End Consumer App</h4>
+                        <p class="text-muted small flex-grow-1">
+                            <strong>SmartGrocery AI (OpenYuka Alternative):</strong> Replacing subscription grocery scanning apps with an open, self-hosted AI architecture. Multimodal OCR via Gemini Vision + ingredient toxicology + supermarket price comparison. Zero exposed API keys with client-side BYOK.
+                        </p>
+                        <div class="d-flex flex-wrap gap-1 mb-3">
+                            <span class="badge-claude">Claude Code Build</span>
+                            <span class="badge-tech">Gemini Vision</span>
+                            <span class="badge-cloud">Delta Lake</span>
+                        </div>
+                        <a href="projects.html#section-ai" class="btn btn-sm btn-secondary-modern w-100">
+                            Inspect Architecture Casing <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="col-lg-4">
+                    <div class="card-modern h-100 p-4 d-flex flex-column">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="badge-cloud"><i class="bi bi-cloud-arrow-up"></i> Pillar 02</span>
+                            <span class="badge bg-success bg-opacity-10 text-success small">Infra Accelerators</span>
+                        </div>
+                        <h4 class="fw-bold mb-2">Cloud & Data Infra Micro-Tools</h4>
+                        <p class="text-muted small flex-grow-1">
+                            <strong>GCP & Databricks Cost Shortcuts:</strong> Modular microfeatures engineered to maximize free trial credits. Includes 14-day Databricks auto-capped compute daemon (15m idle shutdown), GCP BigQuery query byte guards, and PySpark schema reconciliation.
+                        </p>
+                        <div class="d-flex flex-wrap gap-1 mb-3">
+                            <span class="badge-claude">Claude Repo Sync</span>
+                            <span class="badge-cloud">Databricks CLI</span>
+                            <span class="badge-tech">PySpark</span>
+                        </div>
+                        <a href="projects.html#section-microtools" class="btn btn-sm btn-secondary-modern w-100">
+                            Explore Tooling Casing <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="col-lg-4">
+                    <div class="card-modern h-100 p-4 d-flex flex-column">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <span class="badge-tech"><i class="bi bi-mortarboard-fill"></i> Pillar 03</span>
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary small">Shipped Projects</span>
+                        </div>
+                        <h4 class="fw-bold mb-2">Legacy & College Engineering</h4>
+                        <p class="text-muted small flex-grow-1">
+                            <strong>Machine Learning & Analytics:</strong> Unsupervised player clustering on NBA performance data, computer vision ball/strike calculation for slow-pitch softball (SLOW-ARC), and Enterprise Sales Intelligence dashboards in Tableau.
+                        </p>
+                        <div class="d-flex flex-wrap gap-1 mb-3">
+                            <span class="badge-tech">Scikit-Learn</span>
+                            <span class="badge-tech">Computer Vision</span>
+                            <span class="badge-tech">Tableau</span>
+                        </div>
+                        <a href="projects.html#section-legacy" class="btn btn-sm btn-secondary-modern w-100">
+                            View Production Repos <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security & Secret Lockdown Callout -->
+    <section class="py-5" style="background: var(--bg-surface); border-top: 1px solid var(--border-color);">
+        <div class="container px-4 px-lg-5">
+            <div class="security-banner">
+                <div class="row align-items-center gy-3">
+                    <div class="col-md-1 text-center">
+                        <i class="bi bi-shield-lock-fill security-icon fs-1"></i>
+                    </div>
+                    <div class="col-md-8">
+                        <h5 class="fw-bold mb-1">Strict Credential Lockdown & Secret Leak Prevention</h5>
+                        <p class="text-secondary small mb-0">
+                            Every repository linked here enforces zero hardcoded secrets. Automated <code>gitleaks</code> CI/CD scanning runs on every push, pre-commit hooks intercept local keys, and all cloud demos adhere to Bring-Your-Own-Key (BYOK) architecture so outside viewers cannot consume cloud credits or account resources.
+                        </p>
+                    </div>
+                    <div class="col-md-3 text-md-end text-center">
+                        <a href="SECURITY.md" class="btn btn-sm btn-secondary-modern">
+                            <i class="bi bi-file-earmark-lock"></i> Security Policy
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Modern Footer -->
+    <footer class="footer-modern mt-auto">
+        <div class="container px-4 px-lg-5">
+            <div class="row align-items-center justify-content-between gy-3">
+                <div class="col-md-6 text-center text-md-start">
+                    <div class="fw-bold text-main mb-1">Shiva Preetham Chinthalacheruvu</div>
+                    <div class="small text-muted">&copy; 2026 AI Frontier Portfolio. Built with Claude Code, Antigravity & Codex.</div>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="d-flex justify-content-center justify-content-md-end gap-3 fs-5">
+                        <a href="https://github.com/shivacheruvu" class="footer-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                        <a href="https://www.linkedin.com/in/shivacheruvu/" class="footer-link" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://dot.cards/shivacheruvu" class="footer-link" target="_blank" rel="noopener" aria-label="Dot Profile"><i class="bi bi-person-badge"></i></a>
+                        <a href="mailto:shivacheruvu6@gmail.com" class="footer-link" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS & Custom Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
 </html>
