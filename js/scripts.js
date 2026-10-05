@@ -240,3 +240,52 @@ function initMockRunner() {
     `;
   });
 }
+
+/* -------------------------------------------------------------
+ * Microfeatures: rendered live from the cloud-microfeatures repo
+ * ------------------------------------------------------------- */
+(function () {
+  const list = document.getElementById('mfList');
+  if (!list) return;
+  const REPO = 'shivacheruvu/cloud-microfeatures';
+  const SRC = `https://raw.githubusercontent.com/${REPO}/main/manifest.json`;
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const STATUS = { ran: 'Ran in the cloud', 'ran-local': 'Ran locally', built: 'Built and tested', blocked: 'Blocked' };
+  const box = (html) => `<div class="col-12"><div class="p-4 rounded-3 text-center text-muted small" style="background: var(--bg-surface); border: 1px dashed var(--border-color);">${html}</div></div>`;
+
+  fetch(SRC, { cache: 'no-store' })
+    .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(({ program, features }) => {
+      const total = program.total_days || 80;
+      const dbx = features.filter((f) => f.platform === 'databricks').length;
+      const gcp = features.filter((f) => f.platform === 'gcp').length;
+      document.getElementById('mfBarDbx').style.width = `${(dbx / total) * 100}%`;
+      document.getElementById('mfBarGcp').style.width = `${(gcp / total) * 100}%`;
+      document.getElementById('mfProgressCount').textContent = `${features.length} / ${total}`;
+      const last = features.reduce((m, f) => Math.max(m, f.day), 0);
+      document.getElementById('mfProgressLabel').textContent = features.length
+        ? `Day ${last} of ${total}` : `Day 1 ships ${new Date(program.start_date + 'T12:00:00').toLocaleDateString([], { month: 'long', day: 'numeric' })}`;
+
+      if (!features.length) {
+        list.innerHTML = box('The first microfeature lands on day 1. Each day\'s build appears here automatically, with its code, test and results.');
+        return;
+      }
+      list.innerHTML = [...features].sort((a, b) => b.day - a.day).map((f) => {
+        const isDbx = f.platform === 'databricks';
+        return `<div class="col-md-6"><div class="p-3 rounded-3 h-100 d-flex flex-column" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <span class="badge small" style="background:${isDbx ? 'rgba(255,54,33,.12)' : 'rgba(66,133,244,.12)'};color:${isDbx ? '#d6331f' : '#2f6fdb'}">Day ${f.day} &middot; ${isDbx ? 'Databricks' : 'Google Cloud'}</span>
+            <span class="small text-muted">${esc(STATUS[f.status] || f.status)}</span>
+          </div>
+          <div class="fw-bold mb-1">${esc(f.title)}</div>
+          <div class="small text-muted mb-2 flex-grow-1">${esc(f.summary)}</div>
+          ${f.headline ? `<div class="small fw-bold mb-2">${esc(f.headline)}</div>` : ''}
+          <div class="d-flex flex-wrap gap-1 mb-2">${(f.skills || []).map((s) => `<span class="badge-tech">${esc(s)}</span>`).join('')}</div>
+          <a class="small" href="https://github.com/${REPO}/tree/main/${encodeURI(f.path)}" target="_blank" rel="noopener">Code, test and results</a>
+        </div></div>`;
+      }).join('');
+    })
+    .catch(() => {
+      list.innerHTML = box(`Couldn't load the latest progress right now. See it on <a href="https://github.com/${REPO}" target="_blank" rel="noopener">GitHub</a>.`);
+    });
+})();

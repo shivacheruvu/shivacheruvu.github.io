@@ -20,12 +20,10 @@ The portfolio is architected into 3 core sections:
 - **Stack**: JavaScript PWA &middot; BarcodeDetector/ZXing &middot; Open Food Facts API &middot; optional Gemini (label OCR, explanations) &middot; GitHub Actions &amp; Pages.
 - **Zero-Leak Security**: No backend and no stored keys. AI features are Bring-Your-Own-Key, kept in the visitor's browser. Code: [shivacheruvu/ANTeater](https://github.com/shivacheruvu/ANTeater).
 
-### 2. Functional Tooling & Microfeatures &mdash; Cloud & Data Infra Shortcuts
-- **Problem**: Cloud engineering experiments often exhaust trial limits (e.g. Databricks 14-day trial) or burn unexpected cloud credits.
-- **Solution**: Modular, cost-capped infrastructure shortcuts:
-  - **Databricks 14-Day Trial Daemon**: Single-node bootstrap with an immutable 15-minute inactivity termination policy and automatic Unity Catalog scaffolding.
-  - **GCP Credit-Protected Lakehouse**: GCS Coldline lifecycle rules and BigQuery maximum query byte billing caps.
-  - **PySpark Production Reconciliation Utility**: Fast primary-key and schema drift diff engine across billions of records.
+### 2. Functional Tooling & Microfeatures &mdash; [cloud-microfeatures](https://github.com/shivacheruvu/cloud-microfeatures)
+- **What**: One small, working data-engineering feature a day for 80 days: Databricks for days 1&ndash;14 (free trial), Google Cloud for days 15&ndash;80 (free-trial credits).
+- **How**: Each feature has a local test that runs in CI without cloud access, lands through a checked pull request, and appears on the projects page automatically (the page reads the repo's `manifest.json`).
+- **Guardrails**: Smallest compute that works, auto-termination, spend caps, keyless Workload Identity Federation, and secret scanning on every push. Plan: [ROADMAP.md](https://github.com/shivacheruvu/cloud-microfeatures/blob/main/ROADMAP.md).
 
 ### 3. Production & Legacy Engineering Projects
 - **NBA Player Clustering**: Unsupervised ML (PCA, K-Means) mapping modern positionless basketball roles ([Repo](https://github.com/shivacheruvu/NBA-Clustering-Project)).

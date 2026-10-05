@@ -212,114 +212,56 @@
                     <div>
                         <span class="badge-cloud mb-1"><i class="bi bi-cloud-arrow-up-fill"></i> SECTION 02 &middot; CLOUD & DATA INFRA</span>
                         <h2 class="fw-bold mb-0">Functional Tooling & Microfeatures</h2>
-                        <div class="text-muted small">Cost-Capped Infrastructure Shortcuts &middot; Databricks 14-Day Trial &middot; GCP Credit Guardrails</div>
+                        <div class="text-muted small">One working data-engineering feature a day for 80 days &middot; Databricks, then Google Cloud</div>
                     </div>
-                    <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-3 py-2 fw-bold d-none d-md-inline-block">
-                        Infra Shortcuts Casing
+                    <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-3 py-2 fw-bold d-none d-md-inline-block" id="mfBadge">
+                        Updates daily
                     </span>
                 </div>
 
                 <div class="card-modern p-4 p-md-5 mb-4">
                     <p class="text-secondary line-height-lg mb-4">
-                        This section contains modular infrastructure tooling developed to demonstrate production-grade cloud management under strict budget boundaries. The Databricks implementation is engineered to survive within the <strong>14-day free trial</strong> without accidental billing, while GCP microfeatures safely leverage free promotional credits with automatic spend-caps and Workload Identity Federation.
+                        Every day for 80 days I ship one small, working cloud data feature: a pipeline, a governance control, a cost guardrail,
+                        an ML-in-SQL demo. Days 1&ndash;14 run on the <strong>Databricks free trial</strong>; days 15&ndash;80 run on
+                        <strong>Google Cloud</strong> inside free-trial credits. Each one has a test that runs without cloud access,
+                        lands through a checked pull request, and shows up here automatically.
                     </p>
 
-                    <div class="row g-4 mb-4">
-                        <!-- Tool 1: Databricks 14-Day Trial Daemon -->
-                        <div class="col-lg-6">
-                            <div class="p-4 rounded-4 h-100 d-flex flex-column" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
-                                <div class="d-flex align-items-center justify-content-between mb-3">
-                                    <span class="badge-cloud"><i class="bi bi-clock-history"></i> Micro-Tool 01</span>
-                                    <span class="badge bg-warning bg-opacity-10 text-warning small">14-Day Trial Guard</span>
-                                </div>
-                                <h5 class="fw-bold mb-2">Databricks Trial Rapid Bootstrap & Auto-Shutdown Daemon</h5>
-                                <p class="text-muted small flex-grow-1">
-                                    Automated YAML and Python daemon that provisions single-node Databricks clusters with an immutable 15-minute inactivity termination rule. Sets up Unity Catalog schemas (<code>bronze</code>, <code>silver</code>, <code>gold</code>) and halts all idle compute to eliminate surprise overages.
-                                </p>
-                                <div class="code-window mb-3">
-                                    <div class="code-header">
-                                        <span>cluster-config.yaml &mdash; Cost-Capped</span>
-                                        <button class="copy-btn" data-target="databricksYamlCode"><i class="bi bi-clipboard"></i> Copy</button>
-                                    </div>
-                                    <div class="code-content" id="databricksYamlCode">
-cluster_name: "trial-cost-capped-cluster"
-spark_version: "14.3.x-scala2.12"
-node_type_id: "Standard_D4ds_v5"
-autotermination_minutes: 15  # Strict trial limit
-spark_conf:
-  "spark.databricks.cluster.profile": "singleNode"
-  "spark.master": "local[*]"
-custom_tags:
-  "Environment": "14DayTrial"
-  "CostCenter": "ZeroOverage"
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between small mb-1">
+                            <span class="fw-bold" id="mfProgressLabel">Starting soon</span>
+                            <span class="text-muted" id="mfProgressCount">0 / 80</span>
                         </div>
-
-                        <!-- Tool 2: GCP Credit Guardrails -->
-                        <div class="col-lg-6">
-                            <div class="p-4 rounded-4 h-100 d-flex flex-column" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
-                                <div class="d-flex align-items-center justify-content-between mb-3">
-                                    <span class="badge-cloud"><i class="bi bi-google"></i> Micro-Tool 02</span>
-                                    <span class="badge bg-info bg-opacity-10 text-info small">GCP Free Credit Safe</span>
-                                </div>
-                                <h5 class="fw-bold mb-2">GCP Free-Tier Lakehouse Starter & Billing Caps</h5>
-                                <p class="text-muted small flex-grow-1">
-                                    Terraform and Bash scripts to configure Google Cloud Storage lifecycle rules (auto-transition to Nearline/Coldline after 30 days) and BigQuery query-byte quotas so queries can never exceed free GCP trial allocations. Configures keyless GitHub Actions via Workload Identity.
-                                </p>
-                                <div class="code-window mb-3">
-                                    <div class="code-header">
-                                        <span>gcp_guardrails.sh &mdash; Workload Identity</span>
-                                        <button class="copy-btn" data-target="gcpScriptCode"><i class="bi bi-clipboard"></i> Copy</button>
-                                    </div>
-                                    <div class="code-content" id="gcpScriptCode">
-# Enforce BigQuery maximum billed bytes cap per query:
-bq update --default_query_job_timeout_ms 300000
-bq update --maximum_bytes_billed 10737418240 # 10GB Max Query Guard
-
-# Set GCS lifecycle to Coldline to conserve trial credit:
-gsutil lifecycle set gcs-lifecycle-rule.json gs://shiva-trial-lakehouse/
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="d-flex rounded-pill overflow-hidden" style="height: 10px; background: var(--bg-surface); border: 1px solid var(--border-color);" aria-hidden="true">
+                            <div id="mfBarDbx" style="width:0%; background:#ff3621;"></div>
+                            <div id="mfBarGcp" style="width:0%; background:#4285f4;"></div>
+                        </div>
+                        <div class="d-flex justify-content-between small text-muted mt-1">
+                            <span><span style="color:#ff3621">&#9632;</span> Databricks &middot; days 1&ndash;14</span>
+                            <span><span style="color:#4285f4">&#9632;</span> Google Cloud &middot; days 15&ndash;80</span>
                         </div>
                     </div>
 
-                    <!-- Interactive Micro-Tool Output Viewer -->
-                    <div class="p-4 rounded-4" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
-                        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
-                            <div>
-                                <h5 class="fw-bold mb-1"><i class="bi bi-terminal text-success me-2"></i> Live Microfeature Execution Console</h5>
-                                <div class="small text-muted">Test the cluster bootstrap daemon inside this sandboxed casing.</div>
-                            </div>
-                            <button class="btn btn-sm btn-gemini" id="runMicrotoolBtn">
-                                <i class="bi bi-play-fill"></i> Execute Bootstrap Daemon
-                            </button>
-                        </div>
-
-                        <div class="code-window mb-0">
-                            <div class="code-header">
-                                <span>Output Console &bull; sandbox-terminal</span>
-                                <span class="badge bg-secondary bg-opacity-25 text-white small">idle</span>
-                            </div>
-                            <div class="code-content text-light" id="microtoolConsole" style="min-height: 120px; font-family: var(--font-mono);">
-<span class="text-muted">// Click "Execute Bootstrap Daemon" to simulate cost-capped cluster bootstrap and Unity Catalog mount...</span>
+                    <div class="row g-3" id="mfList" aria-live="polite">
+                        <div class="col-12">
+                            <div class="p-4 rounded-3 text-center text-muted small" style="background: var(--bg-surface); border: 1px dashed var(--border-color);">
+                                Loading the latest microfeatures&hellip;
                             </div>
                         </div>
                     </div>
 
                     <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-3 mt-4 border-top border-secondary border-opacity-10">
                         <div class="d-flex flex-wrap gap-1">
-                            <span class="badge-claude"><i class="bi bi-terminal-fill"></i> Claude Code CLI Sync</span>
-                            <span class="badge-cloud">Databricks Workflows</span>
-                            <span class="badge-cloud">GCP BigQuery & GCS</span>
-                            <span class="badge-tech">PySpark</span>
+                            <span class="badge-claude"><i class="bi bi-terminal-fill"></i> Built daily with Claude Code</span>
+                            <span class="badge-cloud">Databricks</span>
+                            <span class="badge-cloud">Google Cloud</span>
+                            <span class="badge-tech">PySpark &amp; SQL</span>
                             <span class="badge-ai">Workload Identity</span>
                         </div>
-                        <span class="small text-muted">
-                            <i class="bi bi-terminal"></i> Claude Code building micro-repo &bull; Casing ready to render outputs
-                        </span>
+                        <div class="d-flex gap-2">
+                            <a href="https://github.com/shivacheruvu/cloud-microfeatures/blob/main/ROADMAP.md" target="_blank" rel="noopener" class="btn btn-sm btn-secondary-modern">Roadmap</a>
+                            <a href="https://github.com/shivacheruvu/cloud-microfeatures" target="_blank" rel="noopener" class="btn btn-sm btn-gemini"><i class="bi bi-github"></i> View the code</a>
+                        </div>
                     </div>
                 </div>
             </div>
