@@ -245,47 +245,49 @@ function initMockRunner() {
  * Microfeatures: rendered live from the cloud-microfeatures repo
  * ------------------------------------------------------------- */
 (function () {
-  const list = document.getElementById('mfList');
-  if (!list) return;
+  const tracks = ['databricks', 'gcp'];
+  if (!document.getElementById('mf-databricks-list')) return;
   const REPO = 'shivacheruvu/cloud-microfeatures';
   const SRC = `https://raw.githubusercontent.com/${REPO}/main/manifest.json`;
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const safeUrl = (u) => (/^https:\/\//.test(String(u || '')) ? String(u) : '#');
   const STATUS = { ran: 'Ran in the cloud', 'ran-local': 'Ran locally', built: 'Built and tested', blocked: 'Blocked' };
-  const box = (html) => `<div class="col-12"><div class="p-4 rounded-3 text-center text-muted small" style="background: var(--bg-surface); border: 1px dashed var(--border-color);">${html}</div></div>`;
+  const COLOR = { databricks: ['rgba(255,54,33,.12)', '#d6331f'], gcp: ['rgba(66,133,244,.12)', '#2f6fdb'] };
+  const box = (html) => `<div class="p-4 rounded-3 text-center text-muted small" style="background: var(--bg-surface); border: 1px dashed var(--border-color);">${html}</div>`;
+  const el = (t, k) => document.getElementById(`mf-${t}-${k}`);
+
+  const card = (f) => {
+    const [bg, fg] = COLOR[f.platform];
+    const nf = f.new_feature || {};
+    return `<div class="p-3 rounded-3 d-flex flex-column" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <span class="badge small" style="background:${bg};color:${fg}">Day ${Number(f.day)}</span>
+        <span class="small text-muted">${esc(STATUS[f.status] || f.status)}</span>
+      </div>
+      <div class="fw-bold mb-1">${esc(f.title)}</div>
+      <div class="small text-muted mb-2">${esc(f.summary)}</div>
+      ${nf.name ? `<div class="small mb-2"><i class="bi bi-stars"></i> New: <a href="${esc(safeUrl(nf.source))}" target="_blank" rel="noopener">${esc(nf.name)}</a> <span class="text-muted">(${esc(nf.released)})</span></div>` : ''}
+      ${f.headline ? `<div class="small fw-bold mb-2">${esc(f.headline)}</div>` : ''}
+      <div class="d-flex flex-wrap gap-1 mb-2">${(f.skills || []).map((s) => `<span class="badge-tech">${esc(s)}</span>`).join('')}</div>
+      <a class="small" href="https://github.com/${REPO}/tree/main/${encodeURI(f.path)}" target="_blank" rel="noopener">Code, test and results</a>
+    </div>`;
+  };
 
   fetch(SRC, { cache: 'no-store' })
     .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(({ program, features }) => {
       const total = program.total_days || 80;
-      const dbx = features.filter((f) => f.platform === 'databricks').length;
-      const gcp = features.filter((f) => f.platform === 'gcp').length;
-      document.getElementById('mfBarDbx').style.width = `${(dbx / total) * 100}%`;
-      document.getElementById('mfBarGcp').style.width = `${(gcp / total) * 100}%`;
-      document.getElementById('mfProgressCount').textContent = `${features.length} / ${total}`;
-      const last = features.reduce((m, f) => Math.max(m, f.day), 0);
-      document.getElementById('mfProgressLabel').textContent = features.length
-        ? `Day ${last} of ${total}` : `Day 1 ships ${new Date(program.start_date + 'T12:00:00').toLocaleDateString([], { month: 'long', day: 'numeric' })}`;
-
-      if (!features.length) {
-        list.innerHTML = box('The first microfeature lands on day 1. Each day\'s build appears here automatically, with its code, test and results.');
-        return;
-      }
-      list.innerHTML = [...features].sort((a, b) => b.day - a.day).map((f) => {
-        const isDbx = f.platform === 'databricks';
-        return `<div class="col-md-6"><div class="p-3 rounded-3 h-100 d-flex flex-column" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
-          <div class="d-flex justify-content-between align-items-center mb-2">
-            <span class="badge small" style="background:${isDbx ? 'rgba(255,54,33,.12)' : 'rgba(66,133,244,.12)'};color:${isDbx ? '#d6331f' : '#2f6fdb'}">Day ${f.day} &middot; ${isDbx ? 'Databricks' : 'Google Cloud'}</span>
-            <span class="small text-muted">${esc(STATUS[f.status] || f.status)}</span>
-          </div>
-          <div class="fw-bold mb-1">${esc(f.title)}</div>
-          <div class="small text-muted mb-2 flex-grow-1">${esc(f.summary)}</div>
-          ${f.headline ? `<div class="small fw-bold mb-2">${esc(f.headline)}</div>` : ''}
-          <div class="d-flex flex-wrap gap-1 mb-2">${(f.skills || []).map((s) => `<span class="badge-tech">${esc(s)}</span>`).join('')}</div>
-          <a class="small" href="https://github.com/${REPO}/tree/main/${encodeURI(f.path)}" target="_blank" rel="noopener">Code, test and results</a>
-        </div></div>`;
-      }).join('');
+      const start = new Date(program.start_date + 'T12:00:00').toLocaleDateString([], { month: 'long', day: 'numeric' });
+      tracks.forEach((t) => {
+        const mine = features.filter((f) => f.platform === t).sort((a, b) => b.day - a.day);
+        el(t, 'count').textContent = `${mine.length} / ${total}`;
+        el(t, 'bar').style.width = `${(mine.length / total) * 100}%`;
+        el(t, 'list').innerHTML = mine.length ? mine.map(card).join('') : box(`Day 1 ships ${esc(start)}.`);
+      });
     })
     .catch(() => {
-      list.innerHTML = box(`Couldn't load the latest progress right now. See it on <a href="https://github.com/${REPO}" target="_blank" rel="noopener">GitHub</a>.`);
+      tracks.forEach((t) => {
+        el(t, 'list').innerHTML = box(`Couldn't load the latest progress. See it on <a href="https://github.com/${REPO}" target="_blank" rel="noopener">GitHub</a>.`);
+      });
     });
 })();
