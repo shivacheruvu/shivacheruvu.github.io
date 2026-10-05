@@ -21,7 +21,7 @@ The portfolio is architected into 3 core sections:
 - **Zero-Leak Security**: No backend and no stored keys. AI features are Bring-Your-Own-Key, kept in the visitor's browser. Code: [shivacheruvu/ANTeater](https://github.com/shivacheruvu/ANTeater).
 
 ### 2. Functional Tooling & Microfeatures &mdash; [cloud-microfeatures](https://github.com/shivacheruvu/cloud-microfeatures)
-- **What**: One small, working data-engineering feature a day for 80 days: Databricks for days 1&ndash;14 (free trial), Google Cloud for days 15&ndash;80 (free-trial credits).
+- **What**: Two small, working data-engineering features a day for 80 days, one on Databricks and one on Google Cloud, each built on a recently released platform feature.
 - **How**: Each feature has a local test that runs in CI without cloud access, lands through a checked pull request, and appears on the projects page automatically (the page reads the repo's `manifest.json`).
 - **Guardrails**: Smallest compute that works, auto-termination, spend caps, keyless Workload Identity Federation, and secret scanning on every push. Plan: [ROADMAP.md](https://github.com/shivacheruvu/cloud-microfeatures/blob/main/ROADMAP.md).
 

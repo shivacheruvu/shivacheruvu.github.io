@@ -212,7 +212,7 @@
                     <div>
                         <span class="badge-cloud mb-1"><i class="bi bi-cloud-arrow-up-fill"></i> SECTION 02 &middot; CLOUD & DATA INFRA</span>
                         <h2 class="fw-bold mb-0">Functional Tooling & Microfeatures</h2>
-                        <div class="text-muted small">One working data-engineering feature a day for 80 days &middot; Databricks, then Google Cloud</div>
+                        <div class="text-muted small">Two working data-engineering features a day for 80 days &middot; one Databricks, one Google Cloud</div>
                     </div>
                     <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-3 py-2 fw-bold d-none d-md-inline-block" id="mfBadge">
                         Updates daily
@@ -221,31 +221,37 @@
 
                 <div class="card-modern p-4 p-md-5 mb-4">
                     <p class="text-secondary line-height-lg mb-4">
-                        Every day for 80 days I ship one small, working cloud data feature: a pipeline, a governance control, a cost guardrail,
-                        an ML-in-SQL demo. Days 1&ndash;14 run on the <strong>Databricks free trial</strong>; days 15&ndash;80 run on
-                        <strong>Google Cloud</strong> inside free-trial credits. Each one has a test that runs without cloud access,
+                        Every day for 80 days I ship two small, working cloud data features: one on <strong>Databricks</strong>
+                        and one on <strong>Google Cloud</strong>. Each is built on a platform feature released in the last six months,
+                        picked that morning from the official release notes. Every one has a test that runs without cloud access,
                         lands through a checked pull request, and shows up here automatically.
                     </p>
 
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between small mb-1">
-                            <span class="fw-bold" id="mfProgressLabel">Starting soon</span>
-                            <span class="text-muted" id="mfProgressCount">0 / 80</span>
+                    <div class="row g-4" id="mfTracks">
+                        <div class="col-lg-6">
+                            <div class="d-flex justify-content-between align-items-end mb-1">
+                                <h3 class="h5 fw-bold mb-0" style="color:inherit"><span style="color:#ff3621">&#9632;</span> Databricks</h3>
+                                <span class="small text-muted" id="mf-databricks-count">0 / 80</span>
+                            </div>
+                            <div class="small text-muted mb-2">Days 1&ndash;14 on the free trial, then Free Edition</div>
+                            <div class="rounded-pill overflow-hidden mb-3" style="height: 8px; background: var(--bg-surface); border: 1px solid var(--border-color);" aria-hidden="true">
+                                <div id="mf-databricks-bar" style="width:0%; height:100%; background:#ff3621;"></div>
+                            </div>
+                            <div class="d-flex flex-column gap-3" id="mf-databricks-list" aria-live="polite">
+                                <div class="p-4 rounded-3 text-center text-muted small" style="background: var(--bg-surface); border: 1px dashed var(--border-color);">Loading&hellip;</div>
+                            </div>
                         </div>
-                        <div class="d-flex rounded-pill overflow-hidden" style="height: 10px; background: var(--bg-surface); border: 1px solid var(--border-color);" aria-hidden="true">
-                            <div id="mfBarDbx" style="width:0%; background:#ff3621;"></div>
-                            <div id="mfBarGcp" style="width:0%; background:#4285f4;"></div>
-                        </div>
-                        <div class="d-flex justify-content-between small text-muted mt-1">
-                            <span><span style="color:#ff3621">&#9632;</span> Databricks &middot; days 1&ndash;14</span>
-                            <span><span style="color:#4285f4">&#9632;</span> Google Cloud &middot; days 15&ndash;80</span>
-                        </div>
-                    </div>
-
-                    <div class="row g-3" id="mfList" aria-live="polite">
-                        <div class="col-12">
-                            <div class="p-4 rounded-3 text-center text-muted small" style="background: var(--bg-surface); border: 1px dashed var(--border-color);">
-                                Loading the latest microfeatures&hellip;
+                        <div class="col-lg-6">
+                            <div class="d-flex justify-content-between align-items-end mb-1">
+                                <h3 class="h5 fw-bold mb-0" style="color:inherit"><span style="color:#4285f4">&#9632;</span> Google Cloud</h3>
+                                <span class="small text-muted" id="mf-gcp-count">0 / 80</span>
+                            </div>
+                            <div class="small text-muted mb-2">Inside Google Cloud free-trial credits</div>
+                            <div class="rounded-pill overflow-hidden mb-3" style="height: 8px; background: var(--bg-surface); border: 1px solid var(--border-color);" aria-hidden="true">
+                                <div id="mf-gcp-bar" style="width:0%; height:100%; background:#4285f4;"></div>
+                            </div>
+                            <div class="d-flex flex-column gap-3" id="mf-gcp-list" aria-live="polite">
+                                <div class="p-4 rounded-3 text-center text-muted small" style="background: var(--bg-surface); border: 1px dashed var(--border-color);">Loading&hellip;</div>
                             </div>
                         </div>
                     </div>
