@@ -76,14 +76,14 @@ const INTEL_KNOWLEDGE_BASE = {
     </ul>`
   },
   "yuka": {
-    topic: "SmartGrocery AI (End-to-End Yuka Alternative)",
-    badge: "Claude Code & Vision App",
-    response: `<strong>SmartGrocery AI</strong> is Shiva's self-directed daily grocery application replacing subscription food scanners like Yuka:<br>
+    topic: "ANTeater (open-source Yuka alternative)",
+    badge: "Live app &middot; Claude Code build",
+    response: `<strong>ANTeater</strong> is Shiva's open-source replacement for paid grocery scanners like Yuka. <a href="https://shivacheruvu.github.io/ANTeater/" target="_blank" rel="noopener">Try it live</a>.<br>
     <ul>
-      <li><strong>Daily Grocery Utility:</strong> Shiva grocery shops daily and engineered this app to eliminate recurring subscription fees while saving money on family grocery budgets.</li>
-      <li><strong>Vision & Agent Pipeline:</strong> Mobile barcode & nutrition OCR analyzed via Gemini Multimodal Vision, with the backend microservices built and tested using <strong>Claude Code</strong>.</li>
-      <li><strong>Price Arbitrage:</strong> Automatically suggests healthier, cheaper pantry alternatives across local store price indices.</li>
-      <li><strong>Zero-Leak BYOK Architecture:</strong> Pure Bring-Your-Own-Key model—any visitor can clone and run it with their own free API key without touching Shiva's cloud credits or billing accounts.</li>
+      <li><strong>Why:</strong> Shiva shops for groceries daily and didn't want to pay a subscription for a lookup built on open data.</li>
+      <li><strong>How it works:</strong> camera barcode scan, Open Food Facts lookup, and a transparent 0&ndash;100 score (nutrition 60, additives 30, organic 10, high-risk additives cap it at 49).</li>
+      <li><strong>AI:</strong> optional Gemini reads ingredient-label photos into the same scoring engine and explains scores in plain English.</li>
+      <li><strong>Zero-leak:</strong> no backend and no stored keys; AI features use each visitor's own Gemini key, kept in their browser.</li>
     </ul>`
   },
   "cloud": {

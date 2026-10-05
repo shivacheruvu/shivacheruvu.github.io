@@ -14,11 +14,11 @@ This repository powers the personal portfolio and engineering showcase for **Shi
 
 The portfolio is architected into 3 core sections:
 
-### 1. AI End-to-End Consumer App &mdash; SmartGrocery AI (Yuka Replacement)
-- **Problem**: Commercial grocery scanning apps (like Yuka) lock toxicology insights behind paywalls and do not optimize grocery spending.
-- **Solution**: Open, self-hosted food toxicology scanner and price-arbitrage engine.
-- **Stack**: Mobile OCR &middot; Gemini 2.5 Multimodal Vision API &middot; Toxicology Scoring &middot; Supermarket Price Index &middot; Delta Lake Medallion Storage.
-- **Zero-Leak Security**: Pure client-side Bring-Your-Own-Key (BYOK) architecture. External users run the engine with their own free Gemini API key without touching Shiva's cloud credits or billing accounts.
+### 1. AI End-to-End Consumer App &mdash; [ANTeater](https://shivacheruvu.github.io/ANTeater/) (Yuka Replacement)
+- **Problem**: Paid grocery-scanning apps charge a subscription for lookups built on open data.
+- **Solution**: An open-source PWA: barcode to a transparent 0&ndash;100 health score, additive warnings with sources, and higher-scoring alternatives. Spend tracking with CSV export.
+- **Stack**: JavaScript PWA &middot; BarcodeDetector/ZXing &middot; Open Food Facts API &middot; optional Gemini (label OCR, explanations) &middot; GitHub Actions &amp; Pages.
+- **Zero-Leak Security**: No backend and no stored keys. AI features are Bring-Your-Own-Key, kept in the visitor's browser. Code: [shivacheruvu/ANTeater](https://github.com/shivacheruvu/ANTeater).
 
 ### 2. Functional Tooling & Microfeatures &mdash; Cloud & Data Infra Shortcuts
 - **Problem**: Cloud engineering experiments often exhaust trial limits (e.g. Databricks 14-day trial) or burn unexpected cloud credits.

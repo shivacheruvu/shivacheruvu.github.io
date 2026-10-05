@@ -91,142 +91,113 @@
 
             <!-- ============================================================
                  SECTION 1: AI END-TO-END CONSUMER PROJECT
-                 SmartGrocery AI / Yuka Replacement
+                 ANTeater: open-source grocery scanner (Yuka replacement)
+                 Code: https://github.com/shivacheruvu/ANTeater
                  ============================================================ -->
             <div class="project-item mb-5" data-category="ai-e2e" id="section-ai">
                 <div class="d-flex align-items-center justify-content-between mb-4">
                     <div>
                         <span class="badge-ai mb-1"><i class="bi bi-stars"></i> SECTION 01 &middot; AI END-TO-END</span>
-                        <h2 class="fw-bold mb-0">SmartGrocery AI &mdash; Open-Source Yuka Replacement</h2>
-                        <div class="text-muted small">Daily Consumer Utility &middot; Multimodal Vision OCR &middot; Cost-Optimization Engine</div>
+                        <h2 class="fw-bold mb-0">ANTeater &mdash; Open-Source Grocery Scanner</h2>
+                        <div class="text-muted small">Daily consumer utility &middot; Barcode to health score in a second &middot; Runs entirely in the browser</div>
                     </div>
-                    <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25 px-3 py-2 fw-bold d-none d-md-inline-block">
-                        Active Casing Deployed
+                    <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-3 py-2 fw-bold d-none d-md-inline-block">
+                        <i class="bi bi-broadcast"></i> Live
                     </span>
                 </div>
 
                 <div class="card-modern p-4 p-md-5 mb-4">
-                    <div class="row g-4 align-items-center mb-4">
-                        <div class="col-lg-8">
-                            <h4 class="fw-bold mb-2">The Mission: Solving Everyday Grocery Overhead with Open AI</h4>
+                    <div class="row g-4 g-lg-5">
+                        <div class="col-lg-7">
+                            <h4 class="fw-bold mb-2">Why I built it</h4>
                             <p class="text-secondary line-height-lg mb-3">
-                                I grocery shop every day and rely heavily on food quality scanning apps like Yuka to avoid toxic additives. However, existing commercial apps lock ingredient insights behind recurring paywalls, sell user habits, and do nothing to help shoppers optimize grocery bills.
+                                I grocery shop every day and relied on Yuka to check what's in my food, which meant paying a subscription for a lookup
+                                anyone could do with open data. <strong>ANTeater</strong> replaces it: scan a barcode and get a transparent 0&ndash;100 score,
+                                the additives driving it (with sources), and a higher-scoring product from the same category.
                             </p>
-                            <p class="text-secondary line-height-lg mb-0">
-                                <strong>SmartGrocery AI</strong> is an end-to-end open architecture replacing Yuka while introducing real-time local price arbitrage. Shoppers snap a barcode or nutrition panel; the system runs multimodal OCR through <strong>Gemini Vision</strong>, evaluates additives against toxicology research, and cross-references nearby grocery stores to calculate cost savings on healthier alternatives.
-                            </p>
-                        </div>
-                        <div class="col-lg-4 text-center">
-                            <div class="p-3 rounded-4" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
-                                <div class="text-gemini-gradient fw-bold fs-4 mb-1">BYOK Model</div>
-                                <div class="small text-muted mb-2">Bring-Your-Own-Key Client Architecture</div>
-                                <div class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 p-2 small w-100">
-                                    <i class="bi bi-shield-lock-fill"></i> Zero Resource Leakage
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                            <ul class="text-secondary small line-height-lg mb-4 ps-3">
+                                <li><strong>Transparent score:</strong> nutrition 60 (Nutri-Score), additives 30, organic 10; any high-risk additive caps it at 49. Unit tested, method <a href="https://github.com/shivacheruvu/ANTeater/blob/main/docs/METHODOLOGY.md" target="_blank" rel="noopener">documented with sources</a>.</li>
+                                <li><strong>Better options:</strong> searches Open Food Facts for higher-scoring products in the same category and region.</li>
+                                <li><strong>AI where it helps:</strong> for products not in the database, Gemini reads a photo of the ingredient list into the same scoring engine, and can explain any score in plain English.</li>
+                                <li><strong>Spend tracking:</strong> log prices, see monthly spend and how much went to Poor or Bad items, export CSV/JSON for analysis.</li>
+                                <li><strong>Resilient demo:</strong> installable PWA with an offline shell, on-device caching, and graceful handling of API rate limits (HTTP 429/503).</li>
+                            </ul>
 
-                    <!-- Architecture Diagram Cards -->
-                    <div class="mb-4">
-                        <h5 class="fw-bold mb-3"><i class="bi bi-diagram-3 text-primary me-2"></i> End-to-End Pipeline Architecture</h5>
-                        <div class="row g-3">
-                            <div class="col-md-3">
-                                <div class="p-3 rounded-3 h-100" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
-                                    <span class="badge bg-primary bg-opacity-10 text-primary small mb-2">Step 1: Capture</span>
-                                    <div class="fw-bold small mb-1">Mobile Barcode / OCR</div>
-                                    <div class="small text-muted">WebRTC camera stream captures barcode + ingredient label with lighting normalization.</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="p-3 rounded-3 h-100" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
-                                    <span class="badge bg-purple bg-opacity-10 text-purple small mb-2" style="color: #9333ea;">Step 2: AI Vision</span>
-                                    <div class="fw-bold small mb-1">Gemini Multimodal OCR</div>
-                                    <div class="small text-muted">Zero-shot parsing of chemical names, emulsifiers, artificial sweeteners, and E-numbers.</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="p-3 rounded-3 h-100" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
-                                    <span class="badge bg-success bg-opacity-10 text-success small mb-2">Step 3: Scoring</span>
-                                    <div class="fw-bold small mb-1">Toxicology & Price Index</div>
-                                    <div class="small text-muted">Evaluates endocrine disruptors + matches OpenFoodFacts & regional supermarket pricing feeds.</div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="p-3 rounded-3 h-100" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
-                                    <span class="badge bg-info bg-opacity-10 text-info small mb-2">Step 4: Lakehouse</span>
-                                    <div class="fw-bold small mb-1">Delta Medallion Store</div>
-                                    <div class="small text-muted">Caches scanned items in local DuckDB/Delta Lake format for instant sub-millisecond retrieval.</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Security & Replication Guardrail Callout -->
-                    <div class="security-banner mb-4">
-                        <div class="d-flex align-items-start gap-3">
-                            <i class="bi bi-shield-check text-success fs-3"></i>
-                            <div>
-                                <h6 class="fw-bold text-main mb-1">Replicate On Your Own &mdash; Zero Resource Leakage Defense</h6>
-                                <p class="text-secondary small mb-2">
-                                    To protect my cloud infrastructure from outside billing exploitation, this app implements a strict client-side Bring-Your-Own-Key (BYOK) model. Visitors can fork and run this system using their own free Gemini API key without consuming my quotas or accessing my accounts.
-                                </p>
-                                <div class="code-window mb-0">
-                                    <div class="code-header">
-                                        <span>.env.example &mdash; Safe Replication Config</span>
-                                        <button class="copy-btn" data-target="envExampleCode"><i class="bi bi-clipboard"></i> Copy</button>
+                            <h5 class="fw-bold mb-3"><i class="bi bi-diagram-3 text-primary me-2"></i> How a scan flows</h5>
+                            <div class="row g-3 mb-4">
+                                <div class="col-sm-6">
+                                    <div class="p-3 rounded-3 h-100" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                                        <span class="badge bg-primary bg-opacity-10 text-primary small mb-2">1. Capture</span>
+                                        <div class="small text-muted">Camera barcode decoding with the browser's BarcodeDetector, falling back to ZXing on iPhone.</div>
                                     </div>
-                                    <div class="code-content" id="envExampleCode">
-# SmartGrocery AI - Zero-Leak Replication Configuration
-# Enter your own FREE Gemini API Key (https://aistudio.google.com/):
-GEMINI_API_KEY="your-free-gemini-api-key-here"
-
-# Local Storage (Zero Cloud Spend):
-LOCAL_DELTA_LAKE_PATH="./data/medallion_store"
-PRICE_CACHE_ENABLED=true
-MAX_DAILY_SCANS=100
-PORT=8000
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="p-3 rounded-3 h-100" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                                        <span class="badge bg-success bg-opacity-10 text-success small mb-2">2. Lookup</span>
+                                        <div class="small text-muted">Open Food Facts API (no key) with an on-device cache and saved snapshots as a fallback.</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="p-3 rounded-3 h-100" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                                        <span class="badge bg-warning bg-opacity-10 text-warning small mb-2">3. Score</span>
+                                        <div class="small text-muted">Pure-function scoring engine and additive risk reference, covered by tests in CI.</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="p-3 rounded-3 h-100" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
+                                        <span class="badge bg-info bg-opacity-10 text-info small mb-2">4. AI (optional)</span>
+                                        <div class="small text-muted">Gemini structured-JSON output for label OCR and explanations; auto-selects the newest Flash model.</div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <!-- Interactive Scan Simulation Casing -->
-                    <div class="p-4 rounded-4" style="background: var(--bg-surface); border: 1px solid var(--border-color);">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <h5 class="fw-bold mb-0"><i class="bi bi-upc-scan text-gemini-gradient me-2"></i> Interactive Casing Preview: Simulated Scan</h5>
-                            <span class="small text-muted font-monospace">Engine Casing v1.0</span>
-                        </div>
-                        <p class="text-muted small mb-3">Click a sample grocery item to preview the AI toxicology detection and grocery cost-arbitrage output:</p>
-                        
-                        <div class="d-flex flex-wrap gap-2 mb-3">
-                            <button class="btn btn-sm btn-secondary-modern" onclick="simulateScan('cereal')">
-                                <i class="bi bi-box-seam"></i> Scan: Ultra-Processed Cereal
-                            </button>
-                            <button class="btn btn-sm btn-secondary-modern" onclick="simulateScan('oats')">
-                                <i class="bi bi-flower1"></i> Scan: Organic Rolled Oats
-                            </button>
-                            <button class="btn btn-sm btn-secondary-modern" onclick="simulateScan('bar')">
-                                <i class="bi bi-lightning"></i> Scan: High-Protein Energy Bar
-                            </button>
+                            <div class="security-banner mb-4">
+                                <div class="d-flex align-items-start gap-3">
+                                    <i class="bi bi-shield-check text-success fs-3"></i>
+                                    <div>
+                                        <h6 class="fw-bold text-main mb-1">Fork it freely. No keys to steal.</h6>
+                                        <p class="text-secondary small mb-0">
+                                            There is no backend and no stored credential. Product data needs no key, and the AI features are
+                                            Bring-Your-Own-Key: each person pastes their own free Gemini key, which stays in their browser and goes only to Google.
+                                            Every push is secret-scanned, and <code>main</code> only changes through checked pull requests.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-2">
+                                <a href="https://shivacheruvu.github.io/ANTeater/" target="_blank" rel="noopener" class="btn btn-sm btn-gemini">
+                                    <i class="bi bi-phone"></i> Open the live app
+                                </a>
+                                <a href="https://github.com/shivacheruvu/ANTeater" target="_blank" rel="noopener" class="btn btn-sm btn-secondary-modern">
+                                    <i class="bi bi-github"></i> View the code
+                                </a>
+                            </div>
                         </div>
 
-                        <div id="scanResultOutput" class="p-3 rounded-3" style="background: var(--bg-body); border: 1px solid var(--border-color); font-size: 0.88rem;">
-                            <div class="text-muted text-center py-3">Select a sample grocery item above to simulate the Gemini Multimodal Vision analysis.</div>
+                        <!-- Live app, embedded -->
+                        <div class="col-lg-5">
+                            <div class="mx-auto" style="max-width: 360px;">
+                                <div style="border: 10px solid #1d1f1e; border-radius: 36px; overflow: hidden; background: #1d1f1e; box-shadow: 0 18px 40px -20px rgba(0,0,0,.5);">
+                                    <iframe src="https://shivacheruvu.github.io/ANTeater/" title="ANTeater live app"
+                                            allow="camera" loading="lazy"
+                                            style="display:block; width:100%; height:640px; border:0; background:#eef3ef;"></iframe>
+                                </div>
+                                <p class="small text-muted text-center mt-2 mb-0">Live app. Tap a saved product, or open it on your phone to scan.</p>
+                            </div>
                         </div>
                     </div>
 
                     <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 pt-3 mt-4 border-top border-secondary border-opacity-10">
                         <div class="d-flex flex-wrap gap-1">
-                            <span class="badge-claude"><i class="bi bi-terminal-fill"></i> Claude Code CLI Build</span>
-                            <span class="badge-tech">Python FastAPI</span>
-                            <span class="badge-ai">Gemini 2.5 Vision</span>
-                            <span class="badge-cloud">Delta Lake / DuckDB</span>
-                            <span class="badge-tech">Docker</span>
+                            <span class="badge-claude"><i class="bi bi-terminal-fill"></i> Built with Claude Code</span>
+                            <span class="badge-tech">JavaScript PWA</span>
+                            <span class="badge-tech">Open Food Facts API</span>
+                            <span class="badge-ai">Gemini (BYOK)</span>
+                            <span class="badge-cloud">GitHub Actions &amp; Pages</span>
                         </div>
                         <span class="small text-muted">
-                            <i class="bi bi-terminal"></i> Claude Code generating core repo &bull; Casing ready for code merge
+                            <i class="bi bi-check2-circle"></i> Tests and secret scan on every change
                         </span>
                     </div>
                 </div>
@@ -497,61 +468,5 @@ gsutil lifecycle set gcs-lifecycle-rule.json gs://shiva-trial-lakehouse/
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/scripts.js"></script>
 
-    <!-- Interactive Scan Simulation Script for SmartGrocery AI Casing -->
-    <script>
-    function simulateScan(itemType) {
-        const output = document.getElementById('scanResultOutput');
-        if (!output) return;
-
-        if (itemType === 'cereal') {
-            output.innerHTML = `
-                <div class="d-flex align-items-center justify-content-between mb-2">
-                    <span class="fw-bold fs-6 text-danger"><i class="bi bi-exclamation-triangle-fill"></i> Health Score: 24/100 (Poor)</span>
-                    <span class="badge bg-danger bg-opacity-10 text-danger border border-danger border-opacity-25">Ultra-Processed (NOVA 4)</span>
-                </div>
-                <div class="mb-2"><strong>Scanned Item:</strong> Commercial Frosted Flakes ($5.49 @ Supermarket A)</div>
-                <div class="small text-danger mb-2">
-                    &bull; Flagged Additives: BHT (Preservative / Endocrine Disruptor), High-Fructose Corn Syrup (34g added sugar).
-                </div>
-                <div class="p-2 rounded bg-success bg-opacity-10 border border-success border-opacity-25 small text-success">
-                    <i class="bi bi-piggy-bank-fill me-1"></i> <strong>SmartGrocery Price Arbitrage:</strong>
-                    Switch to <em>Store Brand Whole Grain Toasted Oats</em> ($2.79 @ Supermarket B).
-                    <strong>Save $2.70 (49%) + Zero Artificial Preservatives.</strong>
-                </div>
-            `;
-        } else if (itemType === 'oats') {
-            output.innerHTML = `
-                <div class="d-flex align-items-center justify-content-between mb-2">
-                    <span class="fw-bold fs-6 text-success"><i class="bi bi-check-circle-fill"></i> Health Score: 96/100 (Excellent)</span>
-                    <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25">Whole Food (NOVA 1)</span>
-                </div>
-                <div class="mb-2"><strong>Scanned Item:</strong> 100% Organic Rolled Oats ($3.89)</div>
-                <div class="small text-success mb-2">
-                    &bull; Zero flagged chemical additives. High dietary beta-glucan fiber (4g per serving).
-                </div>
-                <div class="p-2 rounded bg-primary bg-opacity-10 border border-primary border-opacity-25 small text-primary">
-                    <i class="bi bi-cart-check-fill me-1"></i> <strong>Store Comparison:</strong>
-                    Best bulk pricing available at Local Co-op ($0.12/oz vs $0.24/oz packaged).
-                </div>
-            `;
-        } else if (itemType === 'bar') {
-            output.innerHTML = `
-                <div class="d-flex align-items-center justify-content-between mb-2">
-                    <span class="fw-bold fs-6 text-warning"><i class="bi bi-exclamation-circle-fill"></i> Health Score: 52/100 (Moderate)</span>
-                    <span class="badge bg-warning bg-opacity-10 text-warning border border-warning border-opacity-25">Processed (NOVA 3)</span>
-                </div>
-                <div class="mb-2"><strong>Scanned Item:</strong> Chocolate Peanut Butter Protein Bar ($2.99)</div>
-                <div class="small text-secondary mb-2">
-                    &bull; Flagged Additives: Sucralose (Artificial Sweetener), Palm Kernel Oil emulsifiers. 20g Protein.
-                </div>
-                <div class="p-2 rounded bg-success bg-opacity-10 border border-success border-opacity-25 small text-success">
-                    <i class="bi bi-piggy-bank-fill me-1"></i> <strong>SmartGrocery Alternative:</strong>
-                    Raw Almond Butter + Greek Yogurt snack alternative.
-                    <strong>Save $1.20 per serving + eliminate artificial sweeteners.</strong>
-                </div>
-            `;
-        }
-    }
-    </script>
 </body>
 </html>
