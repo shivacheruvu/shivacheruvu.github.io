@@ -1,73 +1,110 @@
 /* ===================================================================
    AI FRONTIER PORTFOLIO - DESIGN SYSTEM & MODERN STYLES
    Shiva Preetham Chinthalacheruvu
-   Theme: Claude Code, Antigravity & Codex AI Forward Architecture
+   Theme: Seattle Seahawks (College Navy, Action Green, Wolf Grey)
    =================================================================== */
 
+/* Seattle Seahawks palette:
+   College Navy #002244 · Action Green #69BE28 · Wolf Grey #A5ACAF */
 :root {
+  --hawks-navy: #002244;
+  --hawks-green: #69BE28;
+  --hawks-grey: #A5ACAF;
+
   /* Light Mode Palette */
-  --bg-body: #f8fafc;
+  --bg-body: #f2f4f5;
   --bg-surface: #ffffff;
   --bg-card: #ffffff;
-  --bg-card-hover: #f1f5f9;
+  --bg-card-hover: #e8edf1;
   --bg-glass: rgba(255, 255, 255, 0.92);
-  --border-color: #e2e8f0;
-  --border-glass: rgba(226, 232, 240, 0.85);
-  
-  --text-main: #0f172a;
-  --text-secondary: #334155;
-  --text-muted: #64748b;
-  --text-subtle: #94a3b8;
-  
-  /* Claude & Agentic Accent Palette */
-  --claude-coral: #d97706; /* Warm Anthropic / Claude warm tone */
-  --claude-gradient: linear-gradient(135deg, #d97706 0%, #ea580c 50%, #dc2626 100%);
-  --agent-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #2563eb 100%);
-  --gemini-cyan: #06b6d4;
-  --tech-emerald: #10b981;
-  
-  --primary-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #d97706 100%);
-  --card-gradient: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-  --glow-primary: rgba(79, 70, 229, 0.12);
-  --glow-claude: rgba(217, 119, 6, 0.15);
-  
+  --border-color: #d5dadd;
+  --border-glass: rgba(165, 172, 175, 0.45);
+
+  --text-main: #002244;
+  --text-secondary: #2f4560;
+  --text-muted: #5c6467;
+  --text-subtle: #868d90;
+
+  /* Accent roles */
+  --accent: #69BE28;            /* fills, borders, glows */
+  --accent-text: #3f7a16;       /* green readable on light backgrounds */
+  --on-accent: #002244;         /* text sitting on Action Green */
+
+  --claude-coral: #3f7a16;
+  --claude-gradient: linear-gradient(135deg, #3f7a16 0%, #69BE28 100%);
+  --agent-gradient: linear-gradient(135deg, #002244 0%, #5c6467 100%);
+  --gemini-cyan: #A5ACAF;
+  --tech-emerald: #69BE28;
+
+  --primary-gradient: linear-gradient(135deg, #002244 0%, #0b3a66 50%, #3f7a16 100%);
+  --card-gradient: linear-gradient(180deg, #ffffff 0%, #f2f4f5 100%);
+  --glow-primary: rgba(0, 34, 68, 0.08);
+  --glow-claude: rgba(105, 190, 40, 0.15);
+
   --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  
+
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
   --radius-full: 9999px;
-  
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+
+  --shadow-sm: 0 1px 3px 0 rgba(0, 34, 68, 0.08);
+  --shadow-md: 0 4px 6px -1px rgba(0, 34, 68, 0.1), 0 2px 4px -2px rgba(0, 34, 68, 0.06);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 34, 68, 0.14), 0 8px 10px -6px rgba(0, 34, 68, 0.06);
+
+  /* Bootstrap utility colors remapped to the palette */
+  --bs-primary: #002244;
+  --bs-primary-rgb: 0, 34, 68;
+  --bs-secondary-rgb: 92, 100, 103;
+  --bs-success: #3f7a16;
+  --bs-success-rgb: 63, 122, 22;
+  --bs-warning: #3f7a16;
+  --bs-warning-rgb: 63, 122, 22;
+  --bs-info: #5c6467;
+  --bs-info-rgb: 92, 100, 103;
+  --bs-link-color: #002244;
+  --bs-link-hover-color: #3f7a16;
 }
 
 [data-theme="dark"] {
-  --bg-body: #0b0f19;
-  --bg-surface: #111827;
-  --bg-card: #151e32;
-  --bg-card-hover: #1e293b;
-  --bg-glass: rgba(17, 24, 39, 0.92);
-  --border-color: #1f293d;
-  --border-glass: rgba(51, 65, 85, 0.7);
-  
-  --text-main: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
-  --text-subtle: #64748b;
-  
-  --claude-gradient: linear-gradient(135deg, #f59e0b 0%, #f97316 50%, #ef4444 100%);
-  --agent-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #38bdf8 100%);
-  --primary-gradient: linear-gradient(135deg, #60a5fa 0%, #c084fc 50%, #f59e0b 100%);
-  --card-gradient: linear-gradient(180deg, #151e32 0%, #0f172a 100%);
-  --glow-primary: rgba(99, 102, 241, 0.22);
-  --glow-claude: rgba(245, 158, 11, 0.22);
-  
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+  --bg-body: #00111f;
+  --bg-surface: #001a33;
+  --bg-card: #002244;
+  --bg-card-hover: #0a2e55;
+  --bg-glass: rgba(0, 26, 51, 0.92);
+  --border-color: #133a5e;
+  --border-glass: rgba(165, 172, 175, 0.22);
+
+  --text-main: #f4f6f7;
+  --text-secondary: #c9ced0;
+  --text-muted: #A5ACAF;
+  --text-subtle: #7b8386;
+
+  --accent-text: #69BE28;
+
+  --claude-gradient: linear-gradient(135deg, #69BE28 0%, #9bd66b 100%);
+  --agent-gradient: linear-gradient(135deg, #A5ACAF 0%, #69BE28 100%);
+  --primary-gradient: linear-gradient(135deg, #69BE28 0%, #A5ACAF 100%);
+  --card-gradient: linear-gradient(180deg, #002244 0%, #001a33 100%);
+  --glow-primary: rgba(105, 190, 40, 0.14);
+  --glow-claude: rgba(105, 190, 40, 0.2);
+
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.45);
   --shadow-md: 0 4px 10px -1px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 15px 30px -5px rgba(0, 0, 0, 0.6);
+
+  --bs-primary: #69BE28;
+  --bs-primary-rgb: 105, 190, 40;
+  --bs-secondary-rgb: 165, 172, 175;
+  --bs-success: #69BE28;
+  --bs-success-rgb: 105, 190, 40;
+  --bs-warning: #69BE28;
+  --bs-warning-rgb: 105, 190, 40;
+  --bs-info: #A5ACAF;
+  --bs-info-rgb: 165, 172, 175;
+  --bs-link-color: #69BE28;
+  --bs-link-hover-color: #A5ACAF;
 }
 
 /* Global Reset & Typography */
@@ -137,17 +174,17 @@ p, li {
   border-radius: var(--radius-full);
   font-size: 0.82rem;
   font-weight: 600;
-  background: rgba(16, 185, 129, 0.1);
-  color: #10b981;
-  border: 1px solid rgba(16, 185, 129, 0.25);
+  background: rgba(105, 190, 40, 0.12);
+  color: var(--accent-text);
+  border: 1px solid rgba(105, 190, 40, 0.35);
 }
 
 .status-dot {
   width: 8px;
   height: 8px;
-  background-color: #10b981;
+  background-color: var(--hawks-green);
   border-radius: 50%;
-  box-shadow: 0 0 10px #10b981;
+  box-shadow: 0 0 10px var(--hawks-green);
   animation: pulse-dot 2s infinite ease-in-out;
 }
 
@@ -279,7 +316,7 @@ p, li {
 .card-modern:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-lg);
-  border-color: rgba(99, 102, 241, 0.4);
+  border-color: rgba(105, 190, 40, 0.55);
 }
 
 /* Stat Metric Boxes */
@@ -295,7 +332,7 @@ p, li {
 }
 
 .stat-box:hover {
-  border-color: #2563eb;
+  border-color: var(--accent);
   box-shadow: var(--shadow-md);
 }
 
@@ -334,15 +371,15 @@ p, li {
   font-size: 0.78rem;
   font-weight: 600;
   font-family: var(--font-mono);
-  background: rgba(37, 99, 235, 0.08);
-  color: #2563eb;
-  border: 1px solid rgba(37, 99, 235, 0.2);
+  background: rgba(0, 34, 68, 0.07);
+  color: #002244;
+  border: 1px solid rgba(0, 34, 68, 0.22);
 }
 
 [data-theme="dark"] .badge-tech {
-  background: rgba(96, 165, 250, 0.12);
-  color: #93c5fd;
-  border-color: rgba(96, 165, 250, 0.25);
+  background: rgba(165, 172, 175, 0.12);
+  color: #e1e5e6;
+  border-color: rgba(165, 172, 175, 0.3);
 }
 
 .badge-claude {
@@ -354,15 +391,15 @@ p, li {
   font-size: 0.78rem;
   font-weight: 600;
   font-family: var(--font-mono);
-  background: rgba(217, 119, 6, 0.1);
-  color: #d97706;
-  border: 1px solid rgba(217, 119, 6, 0.25);
+  background: rgba(105, 190, 40, 0.12);
+  color: #3f7a16;
+  border: 1px solid rgba(105, 190, 40, 0.38);
 }
 
 [data-theme="dark"] .badge-claude {
-  background: rgba(245, 158, 11, 0.15);
-  color: #fcd34d;
-  border-color: rgba(245, 158, 11, 0.3);
+  background: rgba(105, 190, 40, 0.15);
+  color: #9bd66b;
+  border-color: rgba(105, 190, 40, 0.35);
 }
 
 .badge-cloud {
@@ -374,15 +411,15 @@ p, li {
   font-size: 0.78rem;
   font-weight: 600;
   font-family: var(--font-mono);
-  background: rgba(16, 185, 129, 0.08);
-  color: #059669;
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  background: rgba(165, 172, 175, 0.18);
+  color: #4c5356;
+  border: 1px solid rgba(165, 172, 175, 0.5);
 }
 
 [data-theme="dark"] .badge-cloud {
-  background: rgba(52, 211, 153, 0.12);
-  color: #6ee7b7;
-  border-color: rgba(52, 211, 153, 0.25);
+  background: rgba(165, 172, 175, 0.14);
+  color: #c9ced0;
+  border-color: rgba(165, 172, 175, 0.32);
 }
 
 .badge-ai {
@@ -394,15 +431,15 @@ p, li {
   font-size: 0.78rem;
   font-weight: 600;
   font-family: var(--font-mono);
-  background: rgba(168, 85, 247, 0.08);
-  color: #9333ea;
-  border: 1px solid rgba(168, 85, 247, 0.2);
+  background: #002244;
+  color: #69BE28;
+  border: 1px solid #002244;
 }
 
 [data-theme="dark"] .badge-ai {
-  background: rgba(192, 132, 252, 0.12);
-  color: #d8b4fe;
-  border-color: rgba(192, 132, 252, 0.25);
+  background: rgba(105, 190, 40, 0.12);
+  color: #69BE28;
+  border-color: rgba(105, 190, 40, 0.4);
 }
 
 /* Agentic Intelligence Terminal */
@@ -458,8 +495,8 @@ p, li {
 .intel-prompt-btn:hover,
 .intel-prompt-btn.active {
   background: var(--glow-claude);
-  border-color: #d97706;
-  color: #d97706;
+  border-color: var(--accent);
+  color: var(--accent-text);
   transform: translateY(-1px);
 }
 
@@ -480,22 +517,22 @@ p, li {
   padding: 0.25rem 0.6rem;
   border-radius: var(--radius-sm);
   background: var(--claude-gradient);
-  color: #fff;
+  color: var(--on-accent);
   display: inline-block;
   margin-bottom: 0.75rem;
 }
 
 /* Security Callout */
 .security-banner {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(6, 182, 212, 0.08) 100%);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: linear-gradient(135deg, rgba(105, 190, 40, 0.1) 0%, rgba(165, 172, 175, 0.1) 100%);
+  border: 1px solid rgba(105, 190, 40, 0.35);
   border-radius: var(--radius-md);
   padding: 1.25rem 1.5rem;
 }
 
 .security-icon {
   font-size: 1.5rem;
-  color: #10b981;
+  color: var(--accent-text);
 }
 
 /* Filter Tabs */
@@ -521,32 +558,32 @@ p, li {
 
 .filter-btn:hover,
 .filter-btn.active {
-  background: var(--primary-gradient);
-  color: #ffffff !important;
+  background: var(--hawks-green);
+  color: var(--on-accent) !important;
   border-color: transparent;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 14px rgba(105, 190, 40, 0.35);
 }
 
 /* Code Window */
 .code-window {
-  background: #0f172a;
-  color: #e2e8f0;
+  background: #001a33;
+  color: #e1e5e6;
   border-radius: var(--radius-md);
   overflow: hidden;
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  border: 1px solid #1e293b;
+  border: 1px solid #0a2e55;
   margin: 1rem 0;
 }
 
 .code-header {
-  background: #1e293b;
+  background: #002244;
   padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 0.78rem;
-  color: #94a3b8;
+  color: #A5ACAF;
 }
 
 .code-content {
@@ -557,8 +594,8 @@ p, li {
 
 .copy-btn {
   background: transparent;
-  border: 1px solid #334155;
-  color: #94a3b8;
+  border: 1px solid #133a5e;
+  color: #A5ACAF;
   font-size: 0.72rem;
   padding: 0.2rem 0.55rem;
   border-radius: 4px;
@@ -567,20 +604,20 @@ p, li {
 }
 
 .copy-btn:hover {
-  background: #334155;
-  color: #f8fafc;
+  background: #133a5e;
+  color: #69BE28;
 }
 
 /* Buttons */
 .btn-gemini,
 .btn-claude {
-  background: var(--primary-gradient);
-  color: #ffffff !important;
+  background: var(--hawks-green);
+  color: var(--on-accent) !important;
   font-weight: 700;
   border: none;
   border-radius: var(--radius-full);
   padding: 0.75rem 1.75rem;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  box-shadow: 0 4px 15px rgba(105, 190, 40, 0.35);
   transition: all 0.25s ease;
   display: inline-flex;
   align-items: center;
@@ -591,7 +628,7 @@ p, li {
 .btn-gemini:hover,
 .btn-claude:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.45);
+  box-shadow: 0 8px 25px rgba(105, 190, 40, 0.5);
 }
 
 .btn-secondary-modern {
@@ -630,7 +667,7 @@ p, li {
 
 .theme-toggle-btn:hover {
   background: var(--bg-card-hover);
-  border-color: #d97706;
+  border-color: var(--accent);
 }
 
 .footer-modern {
@@ -647,7 +684,7 @@ p, li {
 }
 
 .footer-link:hover {
-  color: #2563eb;
+  color: var(--accent-text);
 }
 
 @media (max-width: 991.98px) {
@@ -661,4 +698,31 @@ p, li {
   .portrait-frame {
     height: 340px;
   }
+}
+
+/* Bootstrap secondary buttons in College Navy */
+.btn-secondary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #002244;
+  --bs-btn-border-color: #002244;
+  --bs-btn-hover-color: #002244;
+  --bs-btn-hover-bg: #69BE28;
+  --bs-btn-hover-border-color: #69BE28;
+  --bs-btn-active-color: #002244;
+  --bs-btn-active-bg: #5aa821;
+  --bs-btn-active-border-color: #5aa821;
+}
+
+[data-theme="dark"] .btn-secondary {
+  --bs-btn-color: #002244;
+  --bs-btn-bg: #69BE28;
+  --bs-btn-border-color: #69BE28;
+  --bs-btn-hover-color: #002244;
+  --bs-btn-hover-bg: #A5ACAF;
+  --bs-btn-hover-border-color: #A5ACAF;
+}
+
+::selection {
+  background: rgba(105, 190, 40, 0.35);
+  color: inherit;
 }
